@@ -5,11 +5,12 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import wpdev.nx.NxSalesNotification;
+import wpdev.nx.NxCommentsNotification;
 import wpdev.nx.utils.Config;
 import wpdev.nx.utils.DriverManager;
+import wpdev.nx.utils.WordpressLogin;
 
-public class NX_SalesNotification {
+public class NX_CommentsNotification {
 	WebDriver driver = null;
 
 	@Test
@@ -22,8 +23,8 @@ public class NX_SalesNotification {
 	}
 
 	@Test(dependsOnMethods = "invokeBrowser")
-	public void nxSalesTestCase() {
-		NxSalesNotification.nxSalesNotificationCreate(driver, Config.URLS.login_url);
+	public void nxCommentsTestCase() {
+		NxCommentsNotification.nxCommentsNotificationCreate(driver, Config.URLS.login_url);
 		driver.close();
 	}
 }

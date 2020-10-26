@@ -14,9 +14,9 @@ import wpdev.nx.utils.nxSalesNotificationUtils;
 
 public class NxSalesNotification {
 	public static void nxSalesNotificationCreate(WebDriver driver, String edit_url) {
-
+		driver.get(edit_url);
+		
 		try {
-			driver.get(edit_url);
 			// LOGIN
 			WordpressLogin.login(driver);
 
