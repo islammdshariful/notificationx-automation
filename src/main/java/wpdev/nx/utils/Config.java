@@ -49,8 +49,17 @@ public class Config {
 		public static final String enable_open_new_tab_id = "nx_meta_link_open";
 		
 		//CHOOSE TYPE OF NOTIFICATION
+		public static final String select_sales_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[1]/label";
 		public static final String select_comments_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[2]/label";
-
+		public static final String select_reviews_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[3]/label";
+		public static final String select_downloadstats_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[4]/label";
+		public static final String select_elearning_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[5]/label";
+		public static final String select_donation_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[6]/label";
+		public static final String select_notification_bar_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[7]/label";
+		public static final String select_contactform_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[8]/label";
+		public static final String select_emailsubs_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[9]/label";
+		public static final String select_pageanalytics_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[10]/label";
+		
 		//ENABLE SOUND
 		public static final String enable_sound_id = "nx_sound_checkbox";
 
