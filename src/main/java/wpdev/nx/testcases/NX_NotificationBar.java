@@ -25,7 +25,8 @@ public class NX_NotificationBar {
 
 	@Test(dependsOnMethods = "invokeBrowser")
 	public void nxBarCountdownTestCase() {
-		NxNotificationBar.nxCountdownBarCreate(driver, Config.URLS.login_url, Config.URLS.demosite_url );
+		NxNotificationBar.nxCountdownBarCreate(driver, Config.URLS.login_url, Config.URLS.demosite_url, 2);
 		driver.close();
+//		NxNotificationBar.nxBarCountdown(driver, Config.URLS.demosite_url, 2);
 	}
 }

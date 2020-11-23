@@ -1,9 +1,31 @@
 package wpdev.nx.utils;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
 public class Config {
+	
+	public static void delete_notification (WebDriver driver) {
+		try {
+			driver.get(Config.URLS.login_url);
+			// LOGIN
+			WordpressLogin.login(driver);
+
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,593)", "");
+
+			// SELECT NOTIFICATION BAR
+			driver.findElement(By.xpath(Config.EDITUTILS.notificationX_xpath)).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath(Config.DELETE.notification_delete_xpath)).click();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 	public static class URLS {
-		public static final String demosite_url = "http://devmode.local/";
-		public static final String login_url = "http://devmode.local/wp-login.php";
+		public static final String demosite_url = "http://nx.com/";
+		public static final String login_url = "http://nx.com/wp-login.php";
 	}
 
 	public static class UTILS {
@@ -12,11 +34,15 @@ public class Config {
 
 	public static class LOGIN {
 		public static final String username = "sabiro";
-		public static final String password = "12345";
+		public static final String password = "1234";
 
 		public static final String username_field_id = "user_login";
 		public static final String password_field_id = "user_pass";
 		public static final String login_button_id = "wp-submit";
+	}
+	
+	public static class DELETE{
+		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[6]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[4]";
 	}
 
 	public static class EDITUTILS {
