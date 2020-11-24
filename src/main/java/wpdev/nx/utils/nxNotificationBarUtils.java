@@ -59,7 +59,7 @@ public class nxNotificationBarUtils {
 		
 		public static final String notification_content_xpath = "/html/body/div[1]/div/div/div[2]/div";
 		public static final String notification_button_xpath = "/html/body/div[1]/div/div/div[2]/a";
-		public static final String notification_button_1_xpath = "/html/body/div[3]/div/div/div[2]/a";
+		public static final String notification_button_1_xpath = "/html/body/div[1]/div/div/div[2]/a";
 		
 		public static final String notification_close_class = "nx-close";
 		public static final String notification_countdown_day_xpath = "/html/body/div[1]/div/div/div[1]/div[2]/div[1]/span[1]";

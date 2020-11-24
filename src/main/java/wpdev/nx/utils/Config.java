@@ -8,15 +8,13 @@ public class Config {
 	
 	public static void delete_notification (WebDriver driver) {
 		try {
-			driver.get(Config.URLS.login_url);
-			// LOGIN
-			WordpressLogin.login(driver);
-
+			driver.get("http://nx.com/wp-admin/");
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("window.scrollBy(0,593)", "");
 
 			// SELECT NOTIFICATION BAR
 			driver.findElement(By.xpath(Config.EDITUTILS.notificationX_xpath)).click();
+			js.executeScript("window.scrollBy(0,569)", "");
 			Thread.sleep(1000);
 			driver.findElement(By.xpath(Config.DELETE.notification_delete_xpath)).click();
 		} catch (InterruptedException e) {
@@ -42,7 +40,7 @@ public class Config {
 	}
 	
 	public static class DELETE{
-		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[6]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[4]";
+		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[8]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
 	}
 
 	public static class EDITUTILS {
