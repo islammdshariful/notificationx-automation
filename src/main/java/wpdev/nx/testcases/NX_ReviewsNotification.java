@@ -25,9 +25,6 @@ public class NX_ReviewsNotification {
 	@Test(dependsOnMethods = "invokeBrowser")
 	public void nxCommentsTestCase() {
 		NxReviewsNotification.nxReviewsNotificationCreate(driver, Config.URLS.login_url);
-//		driver.get(Config.URLS.login_url);
-//		WordpressLogin.login(driver);
-//		NxReviewsNotification.review(driver);
 		driver.close();
 	}
 }

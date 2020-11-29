@@ -11,45 +11,74 @@ import org.openqa.selenium.WebElement;
 
 import wpdev.nx.utils.Config;
 import wpdev.nx.utils.WordpressLogin;
+import wpdev.nx.utils.nxCommentsNotificationUtils;
 import wpdev.nx.utils.nxReviewsNotificationUtils;
+import wpdev.nx.utils.nxReviewsNotificationUtils.edit_review_notification_LOCATOR;
+import wpdev.nx.utils.nxReviewsNotificationUtils.review_product_LOCATOR;
 
 public class NxReviewsNotification {
-	public static void commentNotification(WebDriver driver, String p_name) {
-		driver.get("http://devmode.local/");
+	public static void double_click_xpth(WebDriver driver, String xpth) {
+		try {
+			driver.findElement(By.xpath(xpth)).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath(xpth)).click();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void double_click_id(WebDriver driver, String id) {
+		try {
+			driver.findElement(By.id(id)).click();
+			Thread.sleep(1000);
+			driver.findElement(By.id(id)).click();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void reviewNotification(WebDriver driver, String p_name) {
+		driver.get(Config.URLS.demosite_url);
 		System.out.println("Passit" + p_name);
 		try {
 			Thread.sleep(2000);
 
-			WebElement image = driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.review_image_xpath));
+			WebElement image = driver.findElement(
+					By.xpath(nxReviewsNotificationUtils.preview_review_notification_LOCATOR.review_image_xpath));
 			if (image.isDisplayed()) {
 				System.out.println("Notification avatar is Visible");
 			}
-			assertEquals(driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.review_name_xpath)).getText(),
-					nxReviewsNotificationUtils.TEXT.comment_name_text);
+			assertEquals(driver
+					.findElement(
+							By.xpath(nxReviewsNotificationUtils.preview_review_notification_LOCATOR.review_name_xpath))
+					.getText(), nxReviewsNotificationUtils.TEXT.comment_name_text);
 			System.out.println("Avatar name passed !!");
 			System.out.println("try" + p_name);
-			assertEquals(driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.review_product_name_xpath))
+			assertEquals(driver
+					.findElement(By.xpath(
+							nxReviewsNotificationUtils.preview_review_notification_LOCATOR.review_product_name_xpath))
 					.getText(), p_name);
 			System.out.println("Review Product passed !!");
 			Thread.sleep(2000);
-//			WebElement link = driver.findElement(By.xpath(nxCommentsNotificationUtils.LOCATOR.comment_content_xpath));
-//			Actions cursor = new Actions(driver);
-//			cursor.moveToElement(link).click().build().perform();
 
 			// PRODUCT REVIEW LINK
-			driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.reviews_link_xpath)).click();
+			driver.findElement(
+					By.xpath(nxReviewsNotificationUtils.preview_review_notification_LOCATOR.reviews_link_xpath))
+					.click();
 			ArrayList<String> tabs1 = new ArrayList<String>(driver.getWindowHandles());
 			driver.switchTo().window(tabs1.get(1));
-			assertEquals(
-					driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.product_page_title_xpath)).getText(),
-					p_name);
+			assertEquals(driver
+					.findElement(By.xpath(nxReviewsNotificationUtils.review_product_LOCATOR.product_page_title_xpath))
+					.getText(), p_name);
 			System.out.println("Review link passed !!");
 			driver.close();
 			driver.switchTo().window(tabs1.get(0));
 			Thread.sleep(4000);
 
 			// NOTIFICATIONX LINK
-			driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.notificationX_link)).click();
+			driver.findElement(
+					By.xpath(nxReviewsNotificationUtils.preview_review_notification_LOCATOR.notificationX_link))
+					.click();
 			ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
 			driver.switchTo().window(tabs2.get(1));
 			assertEquals(driver.getTitle(), "NotificationX - Best Social Proof & FOMO Marketing Solution");
@@ -57,7 +86,9 @@ public class NxReviewsNotification {
 			driver.close();
 			driver.switchTo().window(tabs2.get(0));
 
-			driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.notification_close_button_xpath)).click();
+			driver.findElement(By.xpath(
+					nxReviewsNotificationUtils.preview_review_notification_LOCATOR.notification_close_button_xpath))
+					.click();
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -67,20 +98,22 @@ public class NxReviewsNotification {
 
 	public static void review(WebDriver driver) {
 		try {
-			driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.product_option_menu_xpath)).click();
+			driver.findElement(By.xpath(nxReviewsNotificationUtils.review_product_LOCATOR.product_option_menu_xpath))
+					.click();
 			Thread.sleep(1000);
-			String product_name = driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.product_edit_xpath))
+			String product_name = driver
+					.findElement(By.xpath(nxReviewsNotificationUtils.review_product_LOCATOR.product_edit_xpath))
 					.getText();
-			driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.product_edit_xpath)).click();
+			driver.findElement(By.xpath(review_product_LOCATOR.product_edit_xpath)).click();
 			Thread.sleep(3000);
 			System.out.println(product_name);
-			driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.product_link_xpath)).click();
+			driver.findElement(By.xpath(review_product_LOCATOR.product_link_xpath)).click();
 
 			driver.findElement(By.id("tab-title-reviews")).click();
 			driver.findElement(By.id("comment")).sendKeys(nxReviewsNotificationUtils.TEXT.review_text);
 			driver.findElement(By.xpath("//*[@id=\"commentform\"]/div/p/span/a[5]")).click();
 			driver.findElement(By.id("submit")).click();
-			commentNotification(driver, product_name);
+			reviewNotification(driver, product_name);
 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -91,48 +124,93 @@ public class NxReviewsNotification {
 	public static void nxReviewsNotificationCreate(WebDriver driver, String edit_url) {
 		driver.get(edit_url);
 
-		// LOGIN
-		WordpressLogin.login(driver);
+		try {
+			// LOGIN
+			WordpressLogin.login(driver);
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,827)", "");
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,827)", "");
 
-		// NAVIGATE TO NOTIFICATIONX
-		driver.findElement(By.xpath(Config.EDITUTILS.notificationX_xpath)).click();
+			// NAVIGATE TO NOTIFICATIONX
+			driver.findElement(By.xpath(Config.EDITUTILS.notificationX_xpath)).click();
+			// ------------------------------------Source-----------------------------
+			// NAME THE NOTIFICATIONX
+			driver.findElement(By.className(Config.EDITUTILS.add_new_class)).click();
+			driver.findElement(By.id(Config.EDITUTILS.add_title_id)).sendKeys(nxReviewsNotificationUtils.TEXT.add_title);
 
-		// NAME THE NOTIFICATIONX
-		driver.findElement(By.className(Config.EDITUTILS.add_new_class)).click();
-		driver.findElement(By.id(Config.EDITUTILS.add_title_id)).sendKeys(nxReviewsNotificationUtils.TEXT.add_title);
+			// SELETECT REVIEWS NOTIFICATION
+			driver.findElement(By.xpath(Config.EDITUTILS.select_reviews_notification_xpath)).click();
+			driver.findElement(
+					By.xpath(nxReviewsNotificationUtils.edit_review_notification_LOCATOR.select_woocommerce_xpath)).click();
+			driver.findElement(By.className(Config.EDITUTILS.next_button_class)).click();
+			// -----------------------------------Design----------------------------------
+			// CHOOSE THEME
+			driver.findElement(By.xpath(nxReviewsNotificationUtils.edit_review_notification_LOCATOR.choose_theme_xpath))
+					.click();
+			driver.findElement(By.xpath(Config.EDITUTILS.next_design_button_xpath)).click();
+			// -----------------------------------Content---------------------------------
+			// CONTENT
+			js.executeScript("window.scrollBy(0,-623)", "");
+			double_click_xpth(driver, edit_review_notification_LOCATOR.template_dropdown_xpath);
+			double_click_xpth(driver, edit_review_notification_LOCATOR.productname_dropdown_xpath);
+			double_click_xpth(driver, edit_review_notification_LOCATOR.rating_dropdown_xpath);
 
-		// SELETECT REVIEWS NOTIFICATION
-		driver.findElement(By.xpath(Config.EDITUTILS.select_reviews_notification_xpath)).click();
-		driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.select_woocommerce_xpath)).click();
-		driver.findElement(By.className(Config.EDITUTILS.next_button_class)).click();
+			// Link option
+			double_click_xpth(driver, edit_review_notification_LOCATOR.linktype_dropdown_xpath);
+			driver.findElement(By.xpath(Config.EDITUTILS.next_content_button_xpath)).click();
 
-		// CHOOSE THEME
-		driver.findElement(By.xpath(nxReviewsNotificationUtils.LOCATOR.choose_theme_xpath)).click();
-		driver.findElement(By.xpath(Config.EDITUTILS.next_design_button_xpath)).click();
+			// -----------------------------------Display---------------------------------
+			// DISPLAY
+			double_click_id(driver, edit_review_notification_LOCATOR.show_default_img_id);
+			double_click_xpth(driver, edit_review_notification_LOCATOR.img_dropdown_xpath);
 
-		// CONTENT
-		driver.findElement(By.xpath(Config.EDITUTILS.next_content_button_xpath)).click();
+			// Visibility
+			double_click_xpth(driver, edit_review_notification_LOCATOR.showon_dropdown_xpath);
+			double_click_xpth(driver, edit_review_notification_LOCATOR.displayfor_dropdown_xpath);
+			driver.findElement(By.xpath(Config.EDITUTILS.next_display_button_xpath)).click();
 
-		// DISPLAY
-		driver.findElement(By.xpath(Config.EDITUTILS.next_display_button_xpath)).click();
+			// -----------------------------------Customize---------------------------------
+			// ENABLE SOUND
+			js.executeScript("window.scrollBy(0,-490)", "");
+//		Thread.sleep(1000);
+			// clicking on enable sound
 
-		// CUSTOMIZE
-		driver.findElement(By.id(Config.EDITUTILS.delay_before_id)).clear();
-		driver.findElement(By.id(Config.EDITUTILS.delay_before_id))
-				.sendKeys(nxReviewsNotificationUtils.TEXT.delay_before_text);
-		driver.findElement(By.id(Config.EDITUTILS.display_for_id)).clear();
-		driver.findElement(By.id(Config.EDITUTILS.display_for_id))
-				.sendKeys(nxReviewsNotificationUtils.TEXT.display_for_text);
-		driver.findElement(By.id(Config.EDITUTILS.display_from_id)).clear();
-		driver.findElement(By.id(Config.EDITUTILS.display_from_id))
-				.sendKeys(nxReviewsNotificationUtils.TEXT.display_from_text);
+			driver.findElement(By.xpath(edit_review_notification_LOCATOR.enable_sound_xpth)).click();
+//		Thread.sleep(1000);
+			// Sound setting
+			double_click_xpth(driver, edit_review_notification_LOCATOR.select_sound_dropdown_xpth);
+//		Thread.sleep(2000);
+			js.executeScript("window.scrollBy(0,-1500)", "");
+			Thread.sleep(2000);
 
-		driver.findElement(By.id(Config.EDITUTILS.enable_open_new_tab_id)).click();
-		driver.findElement(By.xpath(Config.EDITUTILS.published_button_xpath)).click();
+			driver.findElement(By.xpath(edit_review_notification_LOCATOR.enable_sound_xpth)).click();
+			Thread.sleep(2000);
+			
+			double_click_xpth(driver, edit_review_notification_LOCATOR.position_drpdwn_xpth);
+			double_click_id(driver, edit_review_notification_LOCATOR.noti_size_id);
+			double_click_id(driver, edit_review_notification_LOCATOR.display_close_btn_id);
+			double_click_id(driver, edit_review_notification_LOCATOR.mbl_visible_id);
+			// Queue management
+			double_click_id(driver, edit_review_notification_LOCATOR.active_glb_queue_id);
 
-		review(driver);
+			// timing
+			driver.findElement(By.id(Config.EDITUTILS.delay_before_id)).clear();
+			driver.findElement(By.id(Config.EDITUTILS.delay_before_id))
+					.sendKeys(nxReviewsNotificationUtils.TEXT.delay_before_text);
+			driver.findElement(By.id(Config.EDITUTILS.display_for_id)).clear();
+			driver.findElement(By.id(Config.EDITUTILS.display_for_id))
+					.sendKeys(nxReviewsNotificationUtils.TEXT.display_for_text);
+			// Behavior
+			driver.findElement(By.id(Config.EDITUTILS.display_from_id)).clear();
+			driver.findElement(By.id(Config.EDITUTILS.display_from_id))
+					.sendKeys(nxReviewsNotificationUtils.TEXT.display_from_text);
+			driver.findElement(By.id(Config.EDITUTILS.enable_open_new_tab_id)).click();
+			driver.findElement(By.xpath(Config.EDITUTILS.published_button_xpath)).click();
+
+			review(driver);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
