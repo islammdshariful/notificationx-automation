@@ -2,30 +2,28 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-24T13:30:04 BDT" name="Default suite" finished-at="2020-11-24T13:31:28 BDT" duration-ms="84594">
+  <suite started-at="2020-11-29T10:19:40 BDT" name="Default suite" finished-at="2020-11-29T10:20:16 BDT" duration-ms="35643">
     <groups>
     </groups>
-    <test started-at="2020-11-24T13:30:04 BDT" name="Default test" finished-at="2020-11-24T13:31:28 BDT" duration-ms="84594">
-      <class name="wpdev.nx.testcases.NX_SalesNotification">
-        <test-method signature="invokeBrowser()[pri:0, instance:wpdev.nx.testcases.NX_SalesNotification@55182842]" started-at="2020-11-24T13:30:04 BDT" name="invokeBrowser" finished-at="2020-11-24T13:30:09 BDT" duration-ms="5619" status="PASS">
+    <test started-at="2020-11-29T10:19:40 BDT" name="Default test" finished-at="2020-11-29T10:20:16 BDT" duration-ms="35643">
+      <class name="wpdev.nx.testcases.NX_CommentsNotification">
+        <test-method signature="invokeBrowser()[pri:0, instance:wpdev.nx.testcases.NX_CommentsNotification@55182842]" started-at="2020-11-29T10:19:41 BDT" name="invokeBrowser" finished-at="2020-11-29T10:19:46 BDT" duration-ms="5705" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeBrowser -->
-        <test-method signature="nxSalesTestCase()[pri:0, instance:wpdev.nx.testcases.NX_SalesNotification@55182842]" started-at="2020-11-24T13:30:09 BDT" name="nxSalesTestCase" finished-at="2020-11-24T13:31:28 BDT" depends-on-methods="wpdev.nx.testcases.NX_SalesNotification.invokeBrowser" duration-ms="78939" status="FAIL">
+        <test-method signature="nxCommentsTestCase()[pri:0, instance:wpdev.nx.testcases.NX_CommentsNotification@55182842]" started-at="2020-11-29T10:19:46 BDT" name="nxCommentsTestCase" finished-at="2020-11-29T10:20:16 BDT" depends-on-methods="wpdev.nx.testcases.NX_CommentsNotification.invokeBrowser" duration-ms="29899" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
-expected [Mr. S just purchased1] but found [Mr. S just purchased]]]>
+POST TITLE IS FAILED expected [CommentsNotificationX] but found [NotificationX – Comment]]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [Mr. S just purchased1] but found [Mr. S just purchased]
+POST TITLE IS FAILED expected [CommentsNotificationX] but found [NotificationX – Comment]
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at wpdev.nx.NxSalesNotification.salesNotification(NxSalesNotification.java:283)
-at wpdev.nx.NxSalesNotification.buy_product(NxSalesNotification.java:224)
-at wpdev.nx.NxSalesNotification.nxSalesNotificationCreate(NxSalesNotification.java:193)
-at wpdev.nx.testcases.NX_SalesNotification.nxSalesTestCase(NX_SalesNotification.java:26)
+at wpdev.nx.NxCommentsNotification.commentNotification(NxCommentsNotification.java:114)
+at wpdev.nx.testcases.NX_CommentsNotification.nxCommentsTestCase(NX_CommentsNotification.java:30)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -59,8 +57,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- nxSalesTestCase -->
-      </class> <!-- wpdev.nx.testcases.NX_SalesNotification -->
+        </test-method> <!-- nxCommentsTestCase -->
+      </class> <!-- wpdev.nx.testcases.NX_CommentsNotification -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

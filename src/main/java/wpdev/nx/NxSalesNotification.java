@@ -278,7 +278,7 @@ public class NxSalesNotification {
 			driver.findElement(By
 					.xpath(nxSalesNotificationUtils.Preview_NotificationX_Sale_locator.notification_close_button_xpath))
 					.click();
-			
+
 			Config.delete_notification(driver);
 			softassert.assertAll();
 		} catch (InterruptedException e) {
