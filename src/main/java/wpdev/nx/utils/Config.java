@@ -21,6 +21,27 @@ public class Config {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void double_click_xpth(WebDriver driver, String xpth) {
+		try {
+			driver.findElement(By.xpath(xpth)).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath(xpth)).click();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void double_click_id(WebDriver driver, String id) {
+		try {
+			driver.findElement(By.id(id)).click();
+			Thread.sleep(1000);
+			driver.findElement(By.id(id)).click();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static class URLS {
 		public static final String demosite_url = "http://nx.com/";
 		public static final String login_url = "http://nx.com/wp-login.php";
@@ -69,6 +90,9 @@ public class Config {
 		public static final String display_for_id = "nx_meta_display_for";
 		public static final String display_from_id = "nx_meta_display_from";
 
+		public static final String delay_before_text = "1";
+		public static final String display_for_text = "60";
+		public static final String display_from_text = "10";
 		// OPEN IN A NEW TAB
 		public static final String enable_open_new_tab_id = "nx_meta_link_open";
 		
@@ -88,4 +112,6 @@ public class Config {
 		public static final String enable_sound_id = "nx_sound_checkbox";
 
 	}
+	
+	
 }

@@ -17,26 +17,6 @@ import wpdev.nx.utils.nxReviewsNotificationUtils.edit_review_notification_LOCATO
 import wpdev.nx.utils.nxReviewsNotificationUtils.review_product_LOCATOR;
 
 public class NxReviewsNotification {
-	public static void double_click_xpth(WebDriver driver, String xpth) {
-		try {
-			driver.findElement(By.xpath(xpth)).click();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath(xpth)).click();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void double_click_id(WebDriver driver, String id) {
-		try {
-			driver.findElement(By.id(id)).click();
-			Thread.sleep(1000);
-			driver.findElement(By.id(id)).click();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-
 	public static void reviewNotification(WebDriver driver, String p_name) {
 		driver.get(Config.URLS.demosite_url);
 		System.out.println("Passit" + p_name);
@@ -151,22 +131,22 @@ public class NxReviewsNotification {
 			// -----------------------------------Content---------------------------------
 			// CONTENT
 			js.executeScript("window.scrollBy(0,-623)", "");
-			double_click_xpth(driver, edit_review_notification_LOCATOR.template_dropdown_xpath);
-			double_click_xpth(driver, edit_review_notification_LOCATOR.productname_dropdown_xpath);
-			double_click_xpth(driver, edit_review_notification_LOCATOR.rating_dropdown_xpath);
+			Config.double_click_xpth(driver, edit_review_notification_LOCATOR.template_dropdown_xpath);
+			Config.double_click_xpth(driver, edit_review_notification_LOCATOR.productname_dropdown_xpath);
+			Config.double_click_xpth(driver, edit_review_notification_LOCATOR.rating_dropdown_xpath);
 
 			// Link option
-			double_click_xpth(driver, edit_review_notification_LOCATOR.linktype_dropdown_xpath);
+			Config.double_click_xpth(driver, edit_review_notification_LOCATOR.linktype_dropdown_xpath);
 			driver.findElement(By.xpath(Config.EDITUTILS.next_content_button_xpath)).click();
 
 			// -----------------------------------Display---------------------------------
 			// DISPLAY
-			double_click_id(driver, edit_review_notification_LOCATOR.show_default_img_id);
-			double_click_xpth(driver, edit_review_notification_LOCATOR.img_dropdown_xpath);
+			Config.double_click_id(driver, edit_review_notification_LOCATOR.show_default_img_id);
+			Config.double_click_xpth(driver, edit_review_notification_LOCATOR.img_dropdown_xpath);
 
 			// Visibility
-			double_click_xpth(driver, edit_review_notification_LOCATOR.showon_dropdown_xpath);
-			double_click_xpth(driver, edit_review_notification_LOCATOR.displayfor_dropdown_xpath);
+			Config.double_click_xpth(driver, edit_review_notification_LOCATOR.showon_dropdown_xpath);
+			Config.double_click_xpth(driver, edit_review_notification_LOCATOR.displayfor_dropdown_xpath);
 			driver.findElement(By.xpath(Config.EDITUTILS.next_display_button_xpath)).click();
 
 			// -----------------------------------Customize---------------------------------
@@ -178,7 +158,7 @@ public class NxReviewsNotification {
 			driver.findElement(By.xpath(edit_review_notification_LOCATOR.enable_sound_xpth)).click();
 //		Thread.sleep(1000);
 			// Sound setting
-			double_click_xpth(driver, edit_review_notification_LOCATOR.select_sound_dropdown_xpth);
+			Config.double_click_xpth(driver, edit_review_notification_LOCATOR.select_sound_dropdown_xpth);
 //		Thread.sleep(2000);
 			js.executeScript("window.scrollBy(0,-1500)", "");
 			Thread.sleep(2000);
@@ -186,12 +166,12 @@ public class NxReviewsNotification {
 			driver.findElement(By.xpath(edit_review_notification_LOCATOR.enable_sound_xpth)).click();
 			Thread.sleep(2000);
 			
-			double_click_xpth(driver, edit_review_notification_LOCATOR.position_drpdwn_xpth);
-			double_click_id(driver, edit_review_notification_LOCATOR.noti_size_id);
-			double_click_id(driver, edit_review_notification_LOCATOR.display_close_btn_id);
-			double_click_id(driver, edit_review_notification_LOCATOR.mbl_visible_id);
+			Config.double_click_xpth(driver, edit_review_notification_LOCATOR.position_drpdwn_xpth);
+			Config.double_click_id(driver, edit_review_notification_LOCATOR.noti_size_id);
+			Config.double_click_id(driver, edit_review_notification_LOCATOR.display_close_btn_id);
+			Config.double_click_id(driver, edit_review_notification_LOCATOR.mbl_visible_id);
 			// Queue management
-			double_click_id(driver, edit_review_notification_LOCATOR.active_glb_queue_id);
+			Config.double_click_id(driver, edit_review_notification_LOCATOR.active_glb_queue_id);
 
 			// timing
 			driver.findElement(By.id(Config.EDITUTILS.delay_before_id)).clear();
