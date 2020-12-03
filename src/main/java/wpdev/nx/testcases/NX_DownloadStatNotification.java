@@ -25,7 +25,7 @@ public class NX_DownloadStatNotification {
 
 	@Test(dependsOnMethods = "invokeBrowser")
 	public void nxCommentsTestCase() {
-		NxDownloadStatNotification.nxReviewsNotificationCreate(driver, Config.URLS.login_url);
+		NxDownloadStatNotification.nxDownStatNotificationCreate(driver, Config.URLS.login_url);
 //		driver.get(Config.URLS.login_url);
 //		WordpressLogin.login(driver);
 //		NxDownloadStatNotification.preview(driver);

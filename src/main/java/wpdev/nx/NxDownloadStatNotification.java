@@ -71,7 +71,7 @@ public class NxDownloadStatNotification {
 	}
 	
 
-	public static void nxReviewsNotificationCreate(WebDriver driver, String edit_url) {
+	public static void nxDownStatNotificationCreate(WebDriver driver, String edit_url) {
 		driver.get(edit_url);
 
 		try {

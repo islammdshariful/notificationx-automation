@@ -5,8 +5,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class Config {
-	
-	public static void delete_notification (WebDriver driver) {
+
+	public static void delete_notification(WebDriver driver) {
 		try {
 			driver.get("http://nx.com/wp-admin/");
 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -21,7 +21,7 @@ public class Config {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void double_click_xpth(WebDriver driver, String xpth) {
 		try {
 			driver.findElement(By.xpath(xpth)).click();
@@ -41,7 +41,7 @@ public class Config {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static class URLS {
 		public static final String demosite_url = "http://nx.com/";
 		public static final String login_url = "http://nx.com/wp-login.php";
@@ -59,8 +59,8 @@ public class Config {
 		public static final String password_field_id = "user_pass";
 		public static final String login_button_id = "wp-submit";
 	}
-	
-	public static class DELETE{
+
+	public static class DELETE {
 		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[8]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
 	}
 
@@ -95,8 +95,8 @@ public class Config {
 		public static final String display_from_text = "10";
 		// OPEN IN A NEW TAB
 		public static final String enable_open_new_tab_id = "nx_meta_link_open";
-		
-		//CHOOSE TYPE OF NOTIFICATION
+
+		// CHOOSE TYPE OF NOTIFICATION
 		public static final String select_sales_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[1]/label";
 		public static final String select_comments_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[2]/label";
 		public static final String select_reviews_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[3]/label";
@@ -107,11 +107,10 @@ public class Config {
 		public static final String select_contactform_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[8]/label";
 		public static final String select_emailsubs_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[9]/label";
 		public static final String select_pageanalytics_notification_xpath = "//*[@id=\"nx-meta-display_type\"]/td/div/div/div/div[10]/label";
-		
-		//ENABLE SOUND
+
+		// ENABLE SOUND
 		public static final String enable_sound_id = "nx_sound_checkbox";
 
 	}
-	
-	
+
 }
