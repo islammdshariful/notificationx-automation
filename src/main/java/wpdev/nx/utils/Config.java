@@ -61,7 +61,8 @@ public class Config {
 	}
 
 	public static class DELETE {
-		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[8]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
+//		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[8]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
+		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[5]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
 	}
 
 	public static class EDITUTILS {
