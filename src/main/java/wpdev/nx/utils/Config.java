@@ -62,7 +62,8 @@ public class Config {
 
 	public static class DELETE {
 //		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[8]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
-		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[5]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
+//		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[5]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
+		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[5]/div[5]/table/tbody/tr/td[1]/div/div/a[4]";
 	}
 
 	public static class EDITUTILS {
@@ -94,6 +95,19 @@ public class Config {
 		public static final String delay_before_text = "1";
 		public static final String display_for_text = "60";
 		public static final String display_from_text = "10";
+
+		// Queue management
+		public static final String enable_glb_queue_id = "nx_meta_global_queue_active";
+
+		// Behavior
+		public static final String loop_noti_id = "nx_meta_loop";
+		public static final String open_in_new_tab_id = "nx_meta_link_open";
+
+		public static final String noti_size_id = "nx_meta_conversion_size";
+		public static final String noti_size_text = "450";
+		public static final String display_close_btn_id = "nx_meta_close_button";
+		public static final String mbl_visibility_id = "nx_meta_hide_on_mobile";
+
 		// OPEN IN A NEW TAB
 		public static final String enable_open_new_tab_id = "nx_meta_link_open";
 
