@@ -69,7 +69,7 @@ public class NxCommentsNotification {
 					.getText(), nxCommentsNotificationUtils.TEXT.comment_name_text, "COMMENT TEXT IS FAILED");
 //			System.out.println("Avatar name passed !!");
 			softassert.assertEquals(driver
-					.findElement(By.xpath(
+					.findElement(By.xpath( 
 							nxCommentsNotificationUtils.preview_comment_notification_LOCATOR.comment_content_xpath))
 					.getText(), nxCommentsNotificationUtils.TEXT.comment_text, "COMMENT TEXT IS FAILED");
 //			System.out.println("Comment content passed !!");
@@ -78,6 +78,7 @@ public class NxCommentsNotification {
 //			Actions cursor = new Actions(driver);
 //			cursor.moveToElement(link).click().build().perform();
 
+			Thread.sleep(1000);
 			driver.findElement(
 					By.xpath(nxCommentsNotificationUtils.preview_comment_notification_LOCATOR.comment_link_xpath))
 					.click();
@@ -178,8 +179,8 @@ public class NxCommentsNotification {
 
 			// SET POSITION
 			driver.findElement(By.xpath(Config.EDITUTILS.position_dropdown_xpath)).click();
-			driver.findElement(By.xpath(Config.EDITUTILS.position_type_xpath)).sendKeys("Right");
-			driver.findElement(By.xpath(Config.EDITUTILS.position_type_xpath)).sendKeys(Keys.ENTER);
+			driver.findElement(By.xpath(nxCommentsNotificationUtils.edit_comment_notification_LOCATOR.input_position_xpth)).sendKeys("Right");
+			driver.findElement(By.xpath(nxCommentsNotificationUtils.edit_comment_notification_LOCATOR.input_position_xpth)).sendKeys(Keys.ENTER);
 
 			// -----------------------------------------Customize------------------------------------
 			// ENABLE SOUND

@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-08T11:44:05 BDT" name="Default suite" finished-at="2020-12-08T11:44:25 BDT" duration-ms="19890">
+  <suite started-at="2020-12-09T11:30:55 BDT" name="Default suite" finished-at="2020-12-09T11:31:01 BDT" duration-ms="5824">
     <groups>
     </groups>
-    <test started-at="2020-12-08T11:44:05 BDT" name="Default test" finished-at="2020-12-08T11:44:25 BDT" duration-ms="19890">
-      <class name="wpdev.nx.testcases.NX_ContactFromNotification">
-        <test-method signature="invokeBrowser()[pri:0, instance:wpdev.nx.testcases.NX_ContactFromNotification@55182842]" started-at="2020-12-08T11:44:05 BDT" name="invokeBrowser" finished-at="2020-12-08T11:44:11 BDT" duration-ms="5676" status="PASS">
+    <test started-at="2020-12-09T11:30:55 BDT" name="Default test" finished-at="2020-12-09T11:31:01 BDT" duration-ms="5824">
+      <class name="wpdev.nx.testcases.NX_CommentsNotification">
+        <test-method signature="invokeBrowser()[pri:0, instance:wpdev.nx.testcases.NX_CommentsNotification@55182842]" started-at="2020-12-09T11:30:55 BDT" name="invokeBrowser" finished-at="2020-12-09T11:31:01 BDT" duration-ms="5792" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeBrowser -->
-        <test-method signature="nxContactFormTestCase()[pri:0, instance:wpdev.nx.testcases.NX_ContactFromNotification@55182842]" started-at="2020-12-08T11:44:11 BDT" name="nxContactFormTestCase" finished-at="2020-12-08T11:44:25 BDT" depends-on-methods="wpdev.nx.testcases.NX_ContactFromNotification.invokeBrowser" duration-ms="14181" status="PASS">
+        <test-method signature="nxCommentsTestCase()[pri:0, instance:wpdev.nx.testcases.NX_CommentsNotification@55182842]" started-at="2020-12-09T11:31:01 BDT" name="nxCommentsTestCase" finished-at="2020-12-09T11:31:01 BDT" depends-on-methods="wpdev.nx.testcases.NX_CommentsNotification.invokeBrowser" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- nxContactFormTestCase -->
-      </class> <!-- wpdev.nx.testcases.NX_ContactFromNotification -->
+        </test-method> <!-- nxCommentsTestCase -->
+      </class> <!-- wpdev.nx.testcases.NX_CommentsNotification -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

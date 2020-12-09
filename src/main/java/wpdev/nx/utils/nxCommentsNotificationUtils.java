@@ -1,5 +1,9 @@
 package wpdev.nx.utils;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class nxCommentsNotificationUtils {
 	public static class TEXT {
 		public static final String add_title = "Comments Notification";
@@ -11,7 +15,9 @@ public class nxCommentsNotificationUtils {
 		public static final String display_from_text = "10";
 		
 		public static final String comment_name_text = "Mr. S commented on";
-		public static final String comment_text = "A usefull feature indeed.";
+		public static final Date date = new Date();
+		public static final  SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+		public static final String comment_text = "A usefull feature indeed " + sdf.format(date) ;
 		
 		public static final String post_name_text = "NotificationX – Comment";
 		
@@ -48,6 +54,7 @@ public class nxCommentsNotificationUtils {
 		public static final String ennablesound_xpth = "//*[@id=\"nx-meta-section-sound_checkbox_wrap\"]/div[2]/div/label";
 		//Appearance
 		public static final String position_dropdown_xpth = "//*[@id=\"nx-meta-conversion_position\"]/td/div/span/span[1]/span/span[2]";
+		public static final String input_position_xpth = "/html/body/span/span/span[1]/input";
 		public static final String noti_size_xpth = "nx_meta_conversion_size";
 		public static final String display_close_btn_id = "nx_meta_close_button";
 		public static final String mbl_visibility_id = "nx_meta_hide_on_mobile";
@@ -71,13 +78,13 @@ public class nxCommentsNotificationUtils {
 	
 	public static class preview_comment_notification_LOCATOR{
 		//PREVIEW MODE
-		public static final String comment_image_xpath = "/html/body/div[3]/div/div[1]";	
-		public static final String comment_name_xpath = "/html/body/div[3]/div/div[2]/div[1]";
-		public static final String comment_content_xpath = "/html/body/div[3]/div/div[2]/div[2]/span";
-		public static final String notification_close_button_xpath = "/html/body/div[3]/div/span";
-		public static final String comment_link_xpath = "/html/body/div[3]/a";
-		public static final String time_xpth = "/html/body/div[3]/div/div[2]/div[3]/div";
-		public static final String notificationX_link = "/html/body/div[3]/div/div[2]/div[3]/small/a";
+		public static final String comment_image_xpath = "/html/body/div[5]/div/div[1]/img";	
+		public static final String comment_name_xpath = "/html/body/div[5]/div/div[2]/div[1]";
+		public static final String comment_content_xpath = "/html/body/div[5]/div/div[2]/div[2]/span";
+		public static final String notification_close_button_xpath = "/html/body/div[5]/div/span";
+		public static final String comment_link_xpath = "/html/body/div[5]/a";
+		public static final String time_xpth = "/html/body/div[5]/div/div[2]/div[3]/div/span/small";
+		public static final String notificationX_link = "/html/body/div[5]/div/div[2]/div[3]/small";
 		
 		public static final String post_page_title_xpath = "/html/body/div[2]/div/div/div/main/article/div/header/div/h1";
 		

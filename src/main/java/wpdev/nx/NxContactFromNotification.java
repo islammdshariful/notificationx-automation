@@ -20,11 +20,11 @@ public class NxContactFromNotification {
 		driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_fname_id))
 				.sendKeys(nxContactFromNotificationUtils.TEXT.input_fname_text);
 		driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_lname_id))
-		.sendKeys(nxContactFromNotificationUtils.TEXT.input_lname_text);
+				.sendKeys(nxContactFromNotificationUtils.TEXT.input_lname_text);
 		driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_email_id))
-		.sendKeys(nxContactFromNotificationUtils.TEXT.input_email_text);
+				.sendKeys(nxContactFromNotificationUtils.TEXT.input_email_text);
 		driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_message_id))
-		.sendKeys(nxContactFromNotificationUtils.TEXT.input_message_text);
+				.sendKeys(nxContactFromNotificationUtils.TEXT.input_message_text);
 		driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.submit_button_id)).click();
 	}
 
@@ -48,7 +48,6 @@ public class NxContactFromNotification {
 					nxContactFromNotificationUtils.TEXT.contacform_name_text, "CONTACT FORM TEXT IS FAILED");
 			Thread.sleep(1000);
 
-
 			WebElement time = driver.findElement(By.xpath(preview_contactform_notification_LOCATOR.time_xpth));
 			if (time.isDisplayed()) {
 				System.out.println("Time is Visible");
@@ -61,7 +60,6 @@ public class NxContactFromNotification {
 			Thread.sleep(1000);
 			softassert.assertAll();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -108,8 +106,8 @@ public class NxContactFromNotification {
 					.sendKeys(nxContactFromNotificationUtils.TEXT.slelect_form_text);
 			Thread.sleep(1000);
 			driver.findElement(By.xpath(edit_contactform_notification_LOCATOR.input_select_form_xpth))
-			.sendKeys(Keys.ENTER);
-			
+					.sendKeys(Keys.ENTER);
+
 			Thread.sleep(1000);
 			driver.findElement(By.xpath(edit_contactform_notification_LOCATOR.noti_template_name_xpth)).click();
 			driver.findElement(By.xpath(edit_contactform_notification_LOCATOR.input_tem_name_xpth))
@@ -117,7 +115,7 @@ public class NxContactFromNotification {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath(edit_contactform_notification_LOCATOR.input_tem_name_xpth))
 					.sendKeys(Keys.ENTER);
-			
+
 			driver.findElement(By.id(edit_contactform_notification_LOCATOR.input_tem_text_id)).click();
 			driver.findElement(By.id(edit_contactform_notification_LOCATOR.input_tem_text_id)).clear();
 			driver.findElement(By.id(edit_contactform_notification_LOCATOR.input_tem_text_id))
