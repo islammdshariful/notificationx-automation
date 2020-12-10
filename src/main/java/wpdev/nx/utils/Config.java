@@ -1,10 +1,53 @@
 package wpdev.nx.utils;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 public class Config {
+	
+	public static String create_subs(WebDriver driver) {
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+		String name = "subs"+ sdf.format(date);
+		String username = name.replace(":", "");
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,360)", "");
+		
+		//users
+		driver.findElement(By.xpath("//*[@id=\"menu-users\"]/a/div[2]")).click();
+		
+		//add new
+		driver.findElement(By.xpath("//*[@id=\"wpbody-content\"]/div[3]/a")).click();
+		
+		//user info
+		driver.findElement(By.id("user_login")).sendKeys(username);
+		driver.findElement(By.id("email")).sendKeys(username+"@dev.com");
+		driver.findElement(By.id("first_name")).sendKeys(username.toUpperCase());
+		driver.findElement(By.id("last_name")).sendKeys("USER");
+		driver.findElement(By.id("pass1")).clear();
+		driver.findElement(By.id("pass1")).sendKeys("1234");
+		driver.findElement(By.xpath("//*[@id=\"createuser\"]/table/tbody/tr[8]/td/label/input")).click();
+		Select role = new Select(driver.findElement(By.id("role")));
+		role.selectByVisibleText("Subscriber");		
+		driver.findElement(By.id("createusersub")).click();	
+		
+		return username;
+	}
+	
+	public static void logout(WebDriver driver) {
+		Actions cursor = new Actions(driver);
+		WebElement admin_bar_account = driver.findElement(By.id("wp-admin-bar-my-account"));
+		WebElement admin_bar_menu_logout = driver.findElement(By.xpath("//*[@id=\"wp-admin-bar-logout\"]/a"));
+		cursor.moveToElement(admin_bar_account).moveToElement(admin_bar_menu_logout).click().build().perform();
+	}
 
 	public static void delete_notification(WebDriver driver) {
 		try {
@@ -51,6 +94,7 @@ public class Config {
 		public static final String wordpress_home_xpath = "//*[@id=\"menu-dashboard\"]/ul/li[2]/a";
 	}
 
+	
 	public static class LOGIN {
 		public static final String username = "sabiro";
 		public static final String password = "1234";

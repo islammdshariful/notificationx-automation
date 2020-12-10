@@ -19,10 +19,16 @@ public class test {
 //		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 //		System.out.println(sdf.format(date));	
 		
-		String a = "$20";
-		String s = a.replace("$", "");
-		int price = Integer.parseInt(s);
-		System.out.println(price+10);
+//		String a = "$20";
+//		String s = a.replace("$", "");
+//		int price = Integer.parseInt(s);
+//		System.out.println(price+10);
+		
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+		String name = "subs"+ sdf.format(date);
+		String username = name.replace(":", "");
+		System.out.println(username);
 	}
 
 }

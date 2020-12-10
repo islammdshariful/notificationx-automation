@@ -15,4 +15,10 @@ public class WordpressLogin {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Config.UTILS.wordpress_home_xpath)));
 //		driver.switchTo().alert().dismiss();
 	}
+	
+	public static void login(WebDriver driver, String username, String password) {
+		driver.findElement(By.id(Config.LOGIN.username_field_id)).sendKeys(username);
+		driver.findElement(By.id(Config.LOGIN.password_field_id)).sendKeys(password);
+		driver.findElement(By.id(Config.LOGIN.login_button_id)).click();
+	}
 }
