@@ -9,18 +9,30 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">92,271</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">157,675</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">wpdev.nx.testcases.NX_ELearningNotification</td><td><a href="#m0">nxCommentsTestCase</a></td><td rowspan="1">1607590274139</td><td rowspan="1">86581</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">wpdev.nx.testcases.NX_ELearningNotification</td><td><a href="#m1">invokeBrowser</a></td><td rowspan="1">1607590268477</td><td rowspan="1">5657</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">wpdev.nx.testcases.NX_SalesNotification</td><td><a href="#m0">nxSalesTestCase</a></td><td rowspan="1">1609063909098</td><td rowspan="1">151904</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">wpdev.nx.testcases.NX_SalesNotification</td><td><a href="#m1">invokeBrowser</a></td><td rowspan="1">1609063903358</td><td rowspan="1">5737</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">wpdev.nx.testcases.NX_ELearningNotification#nxCommentsTestCase</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	NAME TEXT IS FAILED expected [SUBS145205 Just Enrolled] but found [SUBS144433 U just enrolled]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at wpdev.nx.NxELearningNotification.preview(NxELearningNotification.java:92)
-	at wpdev.nx.NxELearningNotification.newCandidate(NxELearningNotification.java:33)
-	at wpdev.nx.NxELearningNotification.nxELearningNotificationCreate(NxELearningNotification.java:200)
-	at wpdev.nx.testcases.NX_ELearningNotification.nxCommentsTestCase(NX_ELearningNotification.java:26)
+<h2>Default test</h2><h3 id="m0">wpdev.nx.testcases.NX_SalesNotification#nxSalesTestCase</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : }
+  (Session info: chrome=87.0.4280.88): {Alert text : 
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;WPDEV-LAPTOP-SH&apos;, ip: &apos;192.168.1.238&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\shari\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60416}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: a967edbaa17998cf99323ab541caabff
+*** Element info: {Using=xpath, value=/html/body/div[5]/a}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at wpdev.nx.NxSalesNotification.salesNotification(NxSalesNotification.java:247)
+	at wpdev.nx.NxSalesNotification.testCaseforSalesNotification(NxSalesNotification.java:26)
+	at wpdev.nx.testcases.NX_SalesNotification.nxSalesTestCase(NX_SalesNotification.java:29)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -50,6 +62,6 @@
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">wpdev.nx.testcases.NX_ELearningNotification#invokeBrowser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">wpdev.nx.testcases.NX_SalesNotification#invokeBrowser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

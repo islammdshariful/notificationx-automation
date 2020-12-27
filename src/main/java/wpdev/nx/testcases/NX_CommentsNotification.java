@@ -24,10 +24,9 @@ public class NX_CommentsNotification {
 
 	@Test(dependsOnMethods = "invokeBrowser")
 	public void nxCommentsTestCase() {
-//		NxCommentsNotification.nxCommentsNotificationCreate(driver, Config.URLS.login_url);
-//		driver.get(Config.URLS.login_url);
+//		driver.get("http://nx.com/wp-login.php");
 //		WordpressLogin.login(driver);
-//		NxCommentsNotification.commentNotification(driver);
-//		driver.close();
+		NxCommentsNotification.testCaseforCommnetNotification(driver, Config.URLS.login_url);
+		driver.close();
 	}
 }

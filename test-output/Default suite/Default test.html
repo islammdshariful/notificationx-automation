@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Dec 10 14:51:08 BDT 2020</td>
+<td>Started on:</td><td>Sun Dec 27 16:11:43 BDT 2020</td>
 </tr>
-<tr><td>Total time:</td><td>92 seconds (92271 ms)</td>
+<tr><td>Total time:</td><td>157 seconds (157675 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,15 +75,27 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='wpdev.nx.testcases.NX_ELearningNotification.nxCommentsTestCase()'><b>nxCommentsTestCase</b><br>Test class: wpdev.nx.testcases.NX_ELearningNotification</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	NAME TEXT IS FAILED expected [SUBS145205 Just Enrolled] but found [SUBS144433 U just enrolled]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at wpdev.nx.NxELearningNotification.preview(NxELearningNotification.java:92)
-	at wpdev.nx.NxELearningNotification.newCandidate(NxELearningNotification.java:33)
-	at wpdev.nx.NxELearningNotification.nxELearningNotificationCreate(NxELearningNotification.java:200)
-	at wpdev.nx.testcases.NX_ELearningNotification.nxCommentsTestCase(NX_ELearningNotification.java:26)
+<td title='wpdev.nx.testcases.NX_SalesNotification.nxSalesTestCase()'><b>nxSalesTestCase</b><br>Test class: wpdev.nx.testcases.NX_SalesNotification</td>
+<td><div><pre>org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : }
+  (Session info: chrome=87.0.4280.88): {Alert text : 
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;WPDEV-LAPTOP-SH&apos;, ip: &apos;192.168.1.238&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\shari\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60416}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: a967edbaa17998cf99323ab541caabff
+*** Element info: {Using=xpath, value=/html/body/div[5]/a}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at wpdev.nx.NxSalesNotification.salesNotification(NxSalesNotification.java:247)
+	at wpdev.nx.NxSalesNotification.testCaseforSalesNotification(NxSalesNotification.java:26)
+	at wpdev.nx.testcases.NX_SalesNotification.nxSalesTestCase(NX_SalesNotification.java:29)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -112,15 +124,27 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace627709989", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace627709989'><pre>java.lang.AssertionError: The following asserts failed:
-	NAME TEXT IS FAILED expected [SUBS145205 Just Enrolled] but found [SUBS144433 U just enrolled]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at wpdev.nx.NxELearningNotification.preview(NxELearningNotification.java:92)
-	at wpdev.nx.NxELearningNotification.newCandidate(NxELearningNotification.java:33)
-	at wpdev.nx.NxELearningNotification.nxELearningNotificationCreate(NxELearningNotification.java:200)
-	at wpdev.nx.testcases.NX_ELearningNotification.nxCommentsTestCase(NX_ELearningNotification.java:26)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1048903970", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1048903970'><pre>org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : }
+  (Session info: chrome=87.0.4280.88): {Alert text : 
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;WPDEV-LAPTOP-SH&apos;, ip: &apos;192.168.1.238&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\shari\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60416}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: a967edbaa17998cf99323ab541caabff
+*** Element info: {Using=xpath, value=/html/body/div[5]/a}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at wpdev.nx.NxSalesNotification.salesNotification(NxSalesNotification.java:247)
+	at wpdev.nx.NxSalesNotification.testCaseforSalesNotification(NxSalesNotification.java:26)
+	at wpdev.nx.testcases.NX_SalesNotification.nxSalesTestCase(NX_SalesNotification.java:29)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -150,8 +174,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>86</td>
-<td>wpdev.nx.testcases.NX_ELearningNotification@55182842</td></tr>
+<td>151</td>
+<td>wpdev.nx.testcases.NX_SalesNotification@55182842</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -161,10 +185,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='wpdev.nx.testcases.NX_ELearningNotification.invokeBrowser()'><b>invokeBrowser</b><br>Test class: wpdev.nx.testcases.NX_ELearningNotification</td>
+<td title='wpdev.nx.testcases.NX_SalesNotification.invokeBrowser()'><b>invokeBrowser</b><br>Test class: wpdev.nx.testcases.NX_SalesNotification</td>
 <td></td>
 <td>5</td>
-<td>wpdev.nx.testcases.NX_ELearningNotification@55182842</td></tr>
+<td>wpdev.nx.testcases.NX_SalesNotification@55182842</td></tr>
 </table><p>
 </body>
 </html>

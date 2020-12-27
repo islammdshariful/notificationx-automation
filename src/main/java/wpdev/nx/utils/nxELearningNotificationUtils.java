@@ -7,19 +7,13 @@ public class nxELearningNotificationUtils {
 		public static final String slelect_tem_name_text = "First Name";
 		public static final String noti_tem_name_text = "Name";
 		
-		public static final String tem_text = "Just Enrolled";
+		public static final String tem_text = "USER just enrolled";
 		
 		public static final String notificationX_page_title = "NotificationX - Best Social Proof & FOMO Marketing Solution";
 
 		public static final String delay_before_text = "1";
 		public static final String display_for_text = "60";
 		public static final String display_from_text = "10";
-
-		public static final String contact_form_url = "http://nx.com/a-notificationx-form-wpform/";
-		public static final String input_fname_text = "Webdriver";
-		public static final String input_lname_text = "Automation";
-		public static final String input_email_text = "Sabbir@gmail.com";
-		public static final String input_message_text = "This Automation is for testing notificationX in Contact From.";
 		
 		public static final String course_name_text = "NotifciationX Automation for Tutor LMS";
 		public static final String course_page_title = "NotifciationX Automation for Tutor LMS – NX";

@@ -1,10 +1,14 @@
 package wpdev.nx;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
 import wpdev.nx.utils.Config;
@@ -13,7 +17,12 @@ import wpdev.nx.utils.nxNotificationBarUtils;
 import wpdev.nx.utils.nxNotificationBarUtils.CountDown_TEXT;
 
 public class NxNotificationBar {
-	public static void nxCountdownBarCreate(WebDriver driver, String edit_url, String preview_url, int theme) {
+	public static void testCaseforNotificationBar(WebDriver driver, String url, int theme) {
+		createNotificationBar(driver, url, theme);
+		nxBar(driver, theme);
+		Config.delete_notification(driver, 3);
+	}
+	public static void createNotificationBar(WebDriver driver, String edit_url, int theme) {
 		try {
 			driver.get(edit_url);
 			// LOGIN
@@ -35,19 +44,15 @@ public class NxNotificationBar {
 			// SELECT COUNTDOWN THEME 
 			if(theme == 1) {
 				driver.findElement(By.xpath(Config.EDITUTILS.next_design_button_xpath)).click();
-				System.out.println("Number :one: theme is Selected");
 			}else if(theme == 2) {
 				driver.findElement(By.xpath(nxNotificationBarUtils.CountDown_Locator.select_countdown_2_xpath)).click();
-				System.out.println("Number :two: theme is Selected");
 				Thread.sleep(1000);
 				driver.findElement(By.xpath(Config.EDITUTILS.next_design_button_xpath)).click();
 			}else {
 				driver.findElement(By.xpath(nxNotificationBarUtils.CountDown_Locator.select_countdown_3_xpath)).click();
-				System.out.println("Number :three: theme is Selected");
 				Thread.sleep(1000);
 				driver.findElement(By.xpath(Config.EDITUTILS.next_design_button_xpath)).click();
 			}
-			System.out.println(":heavy_check_mark: Theme Seleted Done.");
 
 			// CONTENT
 			driver.switchTo().frame("nx_meta_press_content_ifr");
@@ -70,10 +75,16 @@ public class NxNotificationBar {
 			driver.findElement(By.id(nxNotificationBarUtils.CountDown_Locator.start_date_field_id)).click();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath(nxNotificationBarUtils.CountDown_Locator.start_choose_date_xpath)).click();
+			
+//			driver.findElement(By.id(nxNotificationBarUtils.CountDown_Locator.countdown_text_id)).click();
 
 			driver.findElement(By.id(nxNotificationBarUtils.CountDown_Locator.end_date_field_id)).click();
 			Thread.sleep(1000);
-			driver.findElement(By.xpath(nxNotificationBarUtils.CountDown_Locator.arrow_down_xpath)).click();
+			Actions cursor = new Actions(driver);
+			
+			WebElement arrow = driver.findElement(By.xpath(nxNotificationBarUtils.CountDown_Locator.arrow_next_xpath));
+			cursor.moveToElement(arrow).click().build().perform();
+//			driver.findElement(By.xpath(nxNotificationBarUtils.CountDown_Locator.arrow_next_xpath)).click();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath(nxNotificationBarUtils.CountDown_Locator.end_choose_date_xpath)).click();
 
@@ -91,20 +102,14 @@ public class NxNotificationBar {
 			// PUBLISHED
 			driver.findElement(By.xpath(Config.EDITUTILS.published_button_xpath)).click();
 
-			// NOTIFICATION HOME PAGE
-			driver.findElement(By.xpath(Config.EDITUTILS.notificationX_xpath)).click();
-
-			Thread.sleep(2000);
-			nxBarCountdown(driver, preview_url, theme);
-
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
 	}
 
-	public static void nxBarCountdown(WebDriver driver, String url, int theme) {
-		driver.get(url);
+	public static void nxBar(WebDriver driver, int theme) {
+		driver.get(Config.URLS.demosite_url);
 		SoftAssert softAssert = new SoftAssert();
 		try {
 			Thread.sleep(1000);
@@ -162,7 +167,7 @@ public class NxNotificationBar {
 			driver.navigate().back();
 			Thread.sleep(4000);
 			
-			if(theme == 1) {
+			if(theme == 0) {
 				driver.findElement(By.xpath("/html/body/div[3]/div/p")).click();
 			}else {
 				driver.findElement(By.className(nxNotificationBarUtils.CountDown_Locator.notification_close_class)).click();
@@ -170,7 +175,7 @@ public class NxNotificationBar {
 			
 			Thread.sleep(1000);
 			
-			Config.delete_notification(driver);
+//			Config.delete_notification(driver);
 			softAssert.assertAll();
 		} catch (InterruptedException e) {
 			e.printStackTrace();

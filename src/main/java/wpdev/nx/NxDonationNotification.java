@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
 import wpdev.nx.utils.Config;
@@ -19,7 +20,28 @@ import wpdev.nx.utils.nxDownloadStatNotificationUtils.TEXT;
 import wpdev.nx.utils.nxDownloadStatNotificationUtils.edit_downstat_notification_LOCATOR;
 
 public class NxDonationNotification {
-	public static void preview(WebDriver driver) {
+	public static void testCaseforDonationNotification(WebDriver driver, String url) {
+		createDonationNotification(driver, url);
+//		doDonation(driver);
+		donationNotification(driver);
+		Config.delete_notification(driver, 1);
+	}
+	
+	public static void doDonation(WebDriver driver) {
+		driver.get(nxDonationNotificationUtils.donate_locator.donation_form_url);
+//		Actions cursor = new Actions(driver);
+//		WebElement btn = driver.findElement(By.xpath(nxDonationNotificationUtils.donate_locator.donate_next_page_xpth));
+//		cursor.moveToElement(btn).click().build().perform();
+//		driver.findElement(By.xpath(nxDonationNotificationUtils.donate_locator.donate_next_page_xpth)).click();
+//		driver.findElement(By.className("give-btn advance-btn")).click();
+		driver.findElement(By.id(nxDonationNotificationUtils.donate_locator.donate_ammount_id)).click();
+		driver.findElement(By.id(nxDonationNotificationUtils.donate_locator.donate_ammount_id)).clear();
+		driver.findElement(By.id(nxDonationNotificationUtils.donate_locator.donate_ammount_id)).sendKeys("123");
+		driver.findElement(By.xpath(nxDonationNotificationUtils.donate_locator.continute_button_xpth)).click();
+		driver.findElement(By.id(nxDonationNotificationUtils.donate_locator.final_donate_now_button_id)).click();
+	}
+	
+	public static void donationNotification(WebDriver driver) {
 		driver.get(Config.URLS.demosite_url);
 		SoftAssert softassert = new SoftAssert();
 		try {
@@ -78,7 +100,7 @@ public class NxDonationNotification {
 
 	}
 
-	public static void nxDonationNotificationCreate(WebDriver driver, String edit_url) {
+	public static void createDonationNotification(WebDriver driver, String edit_url) {
 		driver.get(edit_url);
 
 		try {
@@ -185,9 +207,7 @@ public class NxDonationNotification {
 			driver.findElement(By.id(edit_donation_notification_LOCATOR.open_in_new_tab_id)).click();
 
 			driver.findElement(By.xpath(EDITUTILS.published_button_xpath)).click();
-
-			preview(driver);
-			Config.delete_notification(driver);
+			
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();

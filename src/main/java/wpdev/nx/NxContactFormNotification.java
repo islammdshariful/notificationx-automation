@@ -14,8 +14,14 @@ import wpdev.nx.utils.nxContactFromNotificationUtils.edit_contactform_notificati
 import wpdev.nx.utils.nxContactFromNotificationUtils.preview_contactform_notification_LOCATOR;
 import wpdev.nx.utils.Config.EDITUTILS;
 
-public class NxContactFromNotification {
-	public static void submitForm(WebDriver driver) {
+public class NxContactFormNotification {
+	public static void testCaseforContactFormNotification(WebDriver driver, String url) {
+		createContactFormNotification(driver, url);
+		doSubmitForm(driver);
+		contactFormNotification(driver);
+		Config.delete_notification(driver, 0);
+	}
+	public static void doSubmitForm(WebDriver driver) {
 		driver.get(nxContactFromNotificationUtils.TEXT.contact_form_url);
 		driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_fname_id))
 				.sendKeys(nxContactFromNotificationUtils.TEXT.input_fname_text);
@@ -25,10 +31,12 @@ public class NxContactFromNotification {
 				.sendKeys(nxContactFromNotificationUtils.TEXT.input_email_text);
 		driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_message_id))
 				.sendKeys(nxContactFromNotificationUtils.TEXT.input_message_text);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,308)", "");
 		driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.submit_button_id)).click();
 	}
 
-	public static void preview(WebDriver driver) {
+	public static void contactFormNotification(WebDriver driver) {
 		driver.get(Config.URLS.demosite_url);
 		SoftAssert softassert = new SoftAssert();
 		try {
@@ -65,7 +73,7 @@ public class NxContactFromNotification {
 
 	}
 
-	public static void nxContactFormNotificationCreate(WebDriver driver, String edit_url) {
+	public static void createContactFormNotification(WebDriver driver, String edit_url) {
 		driver.get(edit_url);
 
 		try {
@@ -173,11 +181,6 @@ public class NxContactFromNotification {
 			driver.findElement(By.id(Config.EDITUTILS.open_in_new_tab_id)).click();
 
 			driver.findElement(By.xpath(EDITUTILS.published_button_xpath)).click();
-
-			submitForm(driver);
-			preview(driver);
-			Config.delete_notification(driver);
-			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

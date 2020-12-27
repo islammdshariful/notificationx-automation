@@ -25,11 +25,9 @@ public class NX_DonationNotification {
 
 	@Test(dependsOnMethods = "invokeBrowser")
 	public void nxCommentsTestCase() {
-//		SoftAssert softassert = new SoftAssert();
-		NxDonationNotification.nxDonationNotificationCreate(driver, Config.URLS.login_url);
 //		driver.get("http://nx.com/wp-login.php");
 //		WordpressLogin.login(driver);
-//		NxDonationNotification.preview(driver);
+		NxDonationNotification.testCaseforDonationNotification(driver, Config.URLS.login_url);
 		driver.close();
 	}
 }

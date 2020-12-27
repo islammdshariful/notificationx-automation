@@ -10,10 +10,6 @@ public class nxDownloadStatNotificationUtils {
 		public static final String display_for_text = "60";
 		public static final String display_from_text = "10";
 
-//		public static final String comment_name_text = "sabiro just reviewed";
-//		public static final String review_text = "A useful product indeed.";
-		
-		
 		public static final String  name_text = "Essential Addons for Elementor";
 		public static final String welcome_note_text = "Get Started for Free.";
 		public static final String noti_size_text = "450";
@@ -45,7 +41,7 @@ public class nxDownloadStatNotificationUtils {
 
 		// ---------------------------------Customize------------------------------
 		public static final String postion_dropdown_xpth = "//*[@id=\"nx-meta-conversion_position\"]/td/div/span/span[1]/span/span[2]";
-		public static final String type_position_xpth = "/html/body/span[2]/span/span[1]/input";
+		public static final String type_position_xpth = "/html/body/span/span/span[1]/input";
 		public static final String noti_size_id = "nx_meta_conversion_size";
 		public static final String display_close_btn_id = "nx_meta_close_button";
 		public static final String mbl_visibility_id = "nx_meta_hide_on_mobile";
@@ -62,14 +58,9 @@ public class nxDownloadStatNotificationUtils {
 	}
 	
 	public static class preview_downstat_notification_LOCATOR{
-		public static final String img_xpth = "/html/body/div[3]/div/div[1]/img";
-		public static final String name_xpth = "/html/body/div[3]/div/div[2]/div[1]/span";
-		public static final String downstat_xpth = "/html/body/div[3]/div/div[2]/div[2]";
-		public static final String welcome_note_xpth = "/html/body/div[3]/div/div[2]/div[3]/div/span";
-		public static final String notificationX_link_xpth = "/html/body/div[3]/div/div[2]/div[3]/small";
-		public static final String close_btn_xpth = "/html/body/div[3]/div/span";
-		public static final String plugin_link_xpth = "/html/body/div[3]/a";
-		
+		public static final String plugin_link_xpth = "/html/body/div[5]/a";
+//		public static final String plugin_link_xpth = "/html/body/div[5]/div/div[1]";
+		public static final String  close_btn_xpth= "/html/body/div[5]/div/span";
 	}
 
 }

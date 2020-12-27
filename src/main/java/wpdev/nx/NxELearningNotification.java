@@ -17,7 +17,14 @@ import wpdev.nx.utils.nxELearningNotificationUtils.edit_elearning_notification_L
 import wpdev.nx.utils.nxELearningNotificationUtils.preview_learning_notification_LOCATOR;
 
 public class NxELearningNotification {
-	public static void newCandidate(WebDriver driver) {
+	public static void testCaseforDownloadStatNotification(WebDriver driver, String url) {
+		createELearningNotification(driver, url);
+		String username = newCandidate(driver);
+//		String username = "SUBS095753 USER just enrolled";
+		eLearnignNotification(driver, username);
+		Config.delete_notification(driver, 1);
+	}
+	public static String newCandidate(WebDriver driver) {
 		String username = Config.create_subs(driver);
 		Config.logout(driver);
 		WordpressLogin.login(driver, username, "1234");
@@ -30,10 +37,10 @@ public class NxELearningNotification {
 
 		driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/div/div[2]/div/div[1]/div[4]/form/div/button"))
 				.click();
-		preview(driver, username);
+		return username;
 	}
 
-	public static void preview(WebDriver driver, String username) {
+	public static void eLearnignNotification(WebDriver driver, String username) {
 		driver.get(Config.URLS.demosite_url);
 		SoftAssert softassert = new SoftAssert();
 		try {
@@ -96,7 +103,7 @@ public class NxELearningNotification {
 
 	}
 
-	public static void nxELearningNotificationCreate(WebDriver driver, String edit_url) {
+	public static void createELearningNotification(WebDriver driver, String edit_url) {
 		driver.get(edit_url);
 
 		try {
@@ -196,11 +203,6 @@ public class NxELearningNotification {
 //			Config.double_click_xpth(driver, edit_elearning_notification_LOCATOR.sound_drpdwn_xpth);
 
 			driver.findElement(By.xpath(EDITUTILS.published_button_xpath)).click();
-
-			newCandidate(driver);
-//			preview(driver);
-//			Config.delete_notification(driver);
-//			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

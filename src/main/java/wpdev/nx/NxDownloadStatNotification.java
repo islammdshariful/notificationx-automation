@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
 import wpdev.nx.utils.Config;
@@ -18,60 +19,51 @@ import wpdev.nx.utils.nxDownloadStatNotificationUtils.edit_downstat_notification
 import wpdev.nx.utils.nxDownloadStatNotificationUtils.preview_downstat_notification_LOCATOR;
 
 public class NxDownloadStatNotification {
-	public static void preview(WebDriver driver) {
-		driver.get(Config.URLS.demosite_url);
-		SoftAssert softassert = new SoftAssert();
+	public static void testCaseforDownloadStatNotification(WebDriver driver, String url) {
+//		createnxDownStatNotification(driver, url);
+		downloadStatNotification(driver);
+		Config.delete_notification(driver, 1);
+	}
+
+	public static void downloadStatNotification(WebDriver driver) {
 		try {
-			WebElement image = driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.img_xpth));
-			if (image.isDisplayed()) {
-				System.out.println("Notification avatar is Visible");
-			} else {
-				System.out.println("Notification avatar is NOT Visible");
-			}
+			driver.get(Config.URLS.demosite_url);
+//			Thread.sleep(5000);
+//			SoftAssert softassert = new SoftAssert();
+//			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.plugin_link_xpth)).click();
+//
+//			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+//			driver.switchTo().window(tabs.get(1));
+//
+//			Thread.sleep(1000);
+//			softassert.assertEquals(driver.getTitle(), TEXT.plugin_page_title, "PAGE TITLE IS FAILED");
+//			driver.close();
+//			driver.switchTo().window(tabs.get(0));
 
-			softassert.assertEquals(
-					driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.name_xpth)).getText(),
-					TEXT.name_text, "NAME TEXT IS FAILED");
-
-			softassert.assertEquals(
-					driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.welcome_note_xpth)).getText(),
-					TEXT.welcome_note_text, "WELCOME NOTE TEXT IS FAILED");
-			Thread.sleep(1000);
-			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.plugin_link_xpth)).click();
-
-			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-			driver.switchTo().window(tabs.get(1));
-
-			Thread.sleep(1000);
-			softassert.assertEquals(driver.getTitle(), TEXT.plugin_page_title, "PAGE TITLE IS FAILED");
-			driver.close();
-			driver.switchTo().window(tabs.get(0));
-
-//			Thread.sleep(4000);
-			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.notificationX_link_xpth)).click();
-
-			ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-			driver.switchTo().window(tabs2.get(1));
-
-			softassert.assertEquals(driver.getTitle(), "NotificationX - Best Social Proof & FOMO Marketing Solution",
-					"NOTIFCATION LINK IS FAILED");
-//			System.out.println("NotificationX link passed !!");
-			driver.close();
-			driver.switchTo().window(tabs2.get(0));
+//			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.notificationX_link_xpth)).click();
+//
+//			ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+//			driver.switchTo().window(tabs2.get(1));
+//
+//			softassert.assertEquals(driver.getTitle(), "NotificationX - Best Social Proof & FOMO Marketing Solution",
+//					"NOTIFCATION LINK IS FAILED");
+//			driver.close();
+//			driver.switchTo().window(tabs2.get(0));
 
 			Thread.sleep(1000);
-			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.close_btn_xpth)).click();
-//			Thread.sleep(2000);
-			softassert.assertAll();
+//			Actions cursor = new Actions(driver);
+//			WebElement close = driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.close_btn_xpth));
+//			cursor.moveToElement(close).click().build().perform();
+//			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.close_btn_xpth)).click();
+			Thread.sleep(1000);
+//			softassert.assertAll();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
-	
 
-	public static void nxDownStatNotificationCreate(WebDriver driver, String edit_url) {
+	public static void createnxDownStatNotification(WebDriver driver, String edit_url) {
 		driver.get(edit_url);
 
 		try {
@@ -102,6 +94,7 @@ public class NxDownloadStatNotification {
 					.click();
 			driver.findElement(By.xpath(Config.EDITUTILS.next_design_button_xpath)).click();
 			// --------------------------------------Content------------------------------
+			js.executeScript("window.scrollBy(0,-354)", "");
 			Config.double_click_xpth(driver, edit_downstat_notification_LOCATOR.product_type_dropdown_xpth);
 			driver.findElement(By.id(edit_downstat_notification_LOCATOR.slug_id)).sendKeys(TEXT.slug_name_text);
 			Config.double_click_xpth(driver, edit_downstat_notification_LOCATOR.name_dropdown_xpth);
@@ -112,6 +105,7 @@ public class NxDownloadStatNotification {
 			Config.double_click_xpth(driver, edit_downstat_notification_LOCATOR.linktype_dropdown_xpth);
 			driver.findElement(By.xpath(Config.EDITUTILS.next_content_button_xpath)).click();
 			// ---------------------------------------Display---------------------------------
+			js.executeScript("window.scrollBy(0,-174)", "");
 			Config.double_click_xpth(driver, edit_downstat_notification_LOCATOR.showon_dropdown_xpth);
 			Config.double_click_xpth(driver, edit_downstat_notification_LOCATOR.displayfor_dropdown_xpth);
 			driver.findElement(By.xpath(Config.EDITUTILS.next_display_button_xpath)).click();
@@ -127,7 +121,8 @@ public class NxDownloadStatNotification {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath(edit_downstat_notification_LOCATOR.enable_sound_xpth)).click();
 
-			driver.findElement(By.xpath(edit_downstat_notification_LOCATOR.postion_dropdown_xpth)).click();;
+			driver.findElement(By.xpath(edit_downstat_notification_LOCATOR.postion_dropdown_xpth)).click();
+			;
 			Thread.sleep(1000);
 			driver.findElement(By.xpath(edit_downstat_notification_LOCATOR.type_position_xpth))
 					.sendKeys(TEXT.position_text);
@@ -154,11 +149,12 @@ public class NxDownloadStatNotification {
 			driver.findElement(By.id(Config.EDITUTILS.display_from_id)).sendKeys(Config.EDITUTILS.display_from_text);
 
 			Config.double_click_id(driver, edit_downstat_notification_LOCATOR.loop_noti_id);
-			driver.findElement(By.id(edit_downstat_notification_LOCATOR.open_in_new_tab_id)).click();;
+			driver.findElement(By.id(edit_downstat_notification_LOCATOR.open_in_new_tab_id)).click();
+			;
 			driver.findElement(By.xpath(EDITUTILS.published_button_xpath)).click();
 
-			preview(driver);
-			Config.delete_notification(driver);
+			downloadStatNotification(driver);
+//			Config.delete_notification(driver);
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();

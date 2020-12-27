@@ -11,37 +11,37 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class Config {
-	
+
 	public static String create_subs(WebDriver driver) {
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-		String name = "subs"+ sdf.format(date);
+		String name = "subs" + sdf.format(date);
 		String username = name.replace(":", "");
-		
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,360)", "");
-		
-		//users
+
+		// users
 		driver.findElement(By.xpath("//*[@id=\"menu-users\"]/a/div[2]")).click();
-		
-		//add new
+
+		// add new
 		driver.findElement(By.xpath("//*[@id=\"wpbody-content\"]/div[3]/a")).click();
-		
-		//user info
+
+		// user info
 		driver.findElement(By.id("user_login")).sendKeys(username);
-		driver.findElement(By.id("email")).sendKeys(username+"@dev.com");
+		driver.findElement(By.id("email")).sendKeys(username + "@dev.com");
 		driver.findElement(By.id("first_name")).sendKeys(username.toUpperCase());
 		driver.findElement(By.id("last_name")).sendKeys("USER");
 		driver.findElement(By.id("pass1")).clear();
 		driver.findElement(By.id("pass1")).sendKeys("1234");
 		driver.findElement(By.xpath("//*[@id=\"createuser\"]/table/tbody/tr[8]/td/label/input")).click();
 		Select role = new Select(driver.findElement(By.id("role")));
-		role.selectByVisibleText("Subscriber");		
-		driver.findElement(By.id("createusersub")).click();	
-		
+		role.selectByVisibleText("Subscriber");
+		driver.findElement(By.id("createusersub")).click();
+
 		return username;
 	}
-	
+
 	public static void logout(WebDriver driver) {
 		Actions cursor = new Actions(driver);
 		WebElement admin_bar_account = driver.findElement(By.id("wp-admin-bar-my-account"));
@@ -49,7 +49,7 @@ public class Config {
 		cursor.moveToElement(admin_bar_account).moveToElement(admin_bar_menu_logout).click().build().perform();
 	}
 
-	public static void delete_notification(WebDriver driver) {
+	public static void delete_notification(WebDriver driver, int reg) {
 		try {
 			driver.get("http://nx.com/wp-admin/");
 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -59,7 +59,14 @@ public class Config {
 			driver.findElement(By.xpath(Config.EDITUTILS.notificationX_xpath)).click();
 			js.executeScript("window.scrollBy(0,569)", "");
 			Thread.sleep(1000);
-			driver.findElement(By.xpath(Config.DELETE.notification_delete_xpath)).click();
+			if (reg == 1) {
+				driver.findElement(By.xpath(Config.DELETE.notification_delete_xpath_w_reg)).click();
+			} else if (reg == 3) {
+				driver.findElement(By.xpath(Config.DELETE.notification_bar_delete_xpth)).click();
+			} else {
+				driver.findElement(By.xpath(Config.DELETE.notification_delete_xpath_wo_reg)).click();
+			}
+
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -94,7 +101,6 @@ public class Config {
 		public static final String wordpress_home_xpath = "//*[@id=\"menu-dashboard\"]/ul/li[2]/a";
 	}
 
-	
 	public static class LOGIN {
 		public static final String username = "sabiro";
 		public static final String password = "1234";
@@ -105,9 +111,9 @@ public class Config {
 	}
 
 	public static class DELETE {
-//		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[8]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
-//		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[5]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
-		public static final String notification_delete_xpath = "/html/body/div[1]/div[2]/div[2]/div[1]/div[5]/div[5]/table/tbody/tr/td[1]/div/div/a[4]";
+		public static final String notification_delete_xpath_w_reg = "//*[@id=\"wpbody-content\"]/div[5]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
+		public static final String notification_delete_xpath_wo_reg = "//*[@id=\"wpbody-content\"]/div[6]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[4]";
+		public static final String notification_bar_delete_xpth = "//*[@id=\"wpbody-content\"]/div[5]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[4]";
 	}
 
 	public static class EDITUTILS {

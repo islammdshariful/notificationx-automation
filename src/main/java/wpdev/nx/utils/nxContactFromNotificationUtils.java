@@ -21,7 +21,7 @@ public class nxContactFromNotificationUtils {
 		public static final String input_email_text = "Sabbir@gmail.com";
 		public static final String input_message_text = "This Automation is for testing notificationX in Contact From.";
 		
-		public static final String name_text = input_fname_text + " " + input_lname_text + " Recently Contacted Via";
+		public static final String name_text = input_fname_text + " Recently Contacted Via";
 		public static final String contacform_name_text = slelect_form_text;
 	}
 	
@@ -33,9 +33,9 @@ public class nxContactFromNotificationUtils {
 
 		// ----------------------------content-----------------------
 		public static final String select_form_dropdown_xpth = "//*[@id=\"nx-meta-wpf_form\"]/td/div/span/span[1]/span/span[2]";
-		public static final String input_select_form_xpth = "/html/body/span[2]/span/span[1]/input";
+		public static final String input_select_form_xpth = "/html/body/span/span/span[1]/input";
 		public static final String noti_template_name_xpth = "//*[@id=\"nx_meta_wpf_template_new\"]/div/span[1]/span[1]/span/span[2]";
-		public static final String input_tem_name_xpth = "/html/body/span[2]/span/span[1]/input";
+		public static final String input_tem_name_xpth = "/html/body/span/span/span[1]/input"; 
 		public static final String input_tem_text_id = "nx_meta_wpf_template_new_second_param";
 		public static final String title_drpdwn_xpth = "//*[@id=\"nx_meta_wpf_template_new\"]/div/span[2]/span[1]/span/span[2]";
 		public static final String time_drpdwn_xpth = "//*[@id=\"nx_meta_wpf_template_new\"]/div/span[3]/span[1]/span/span[2]";

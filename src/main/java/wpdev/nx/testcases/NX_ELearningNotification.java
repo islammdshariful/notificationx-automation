@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import wpdev.nx.NxELearningNotification;
 import wpdev.nx.utils.Config;
 import wpdev.nx.utils.DriverManager;
+import wpdev.nx.utils.WordpressLogin;
 
 public class NX_ELearningNotification {
 	WebDriver driver = null;
@@ -23,10 +24,9 @@ public class NX_ELearningNotification {
 
 	@Test(dependsOnMethods = "invokeBrowser")
 	public void nxCommentsTestCase() {
-		NxELearningNotification.nxELearningNotificationCreate(driver, Config.URLS.login_url);
 //		driver.get(Config.URLS.login_url);
 //		WordpressLogin.login(driver);
-//		NxCommentsNotification.commentNotification(driver);
-//		driver.close();
+		NxELearningNotification.testCaseforDownloadStatNotification(driver, Config.URLS.login_url);
+		driver.close();
 	}
 }

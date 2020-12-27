@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import wpdev.nx.NxContactFromNotification;
+import wpdev.nx.NxContactFormNotification;
 import wpdev.nx.utils.Config;
 import wpdev.nx.utils.DriverManager;
 import wpdev.nx.utils.WordpressLogin;
@@ -24,11 +24,9 @@ public class NX_ContactFromNotification {
 
 	@Test(dependsOnMethods = "invokeBrowser")
 	public void nxContactFormTestCase() {
-//		SoftAssert softassert = new SoftAssert();
-		NxContactFromNotification.nxContactFormNotificationCreate(driver, Config.URLS.login_url);
 //		driver.get("http://nx.com/wp-login.php");
 //		WordpressLogin.login(driver);
-//		NxContactFromNotification.preview(driver);
-//		driver.close();
+		NxContactFormNotification.testCaseforContactFormNotification(driver, Config.URLS.login_url);
+		driver.close();
 	}
 }

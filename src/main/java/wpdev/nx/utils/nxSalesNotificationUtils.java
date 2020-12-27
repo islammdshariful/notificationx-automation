@@ -79,27 +79,28 @@ public class nxSalesNotificationUtils {
 
 	public static class Buy_product {
 		public static final String product_option_xpath = "//*[@id=\"menu-posts-product\"]/a/div[3]";
-		public static final String click_product_xpath = "/html/body/div[1]/div[2]/div[3]/div[1]/div[5]/form[1]/table/tbody/tr[1]/td[2]/strong";
+		public static final String product_xpath = "/html/body/div[1]/div[2]/div[3]/div[1]/div[5]/form[1]/table/tbody/tr[1]/td[2]/strong";
 		public static final String product_link = "//*[@id=\"sample-permalink\"]/a";
+		public static final String view_product_xpth = "/html/body/div[1]/div[2]/div[3]/div[1]/div[5]/form[1]/table/tbody/tr[1]/td[2]/div[3]/span[5]/a";
 		
 		public static final String product_name_page = "/html/body/div[2]/div/div/div/main/div/div[2]/div[2]/h1";
 		public static final String addtocart_xpath = "/html/body/div[2]/div/div/div/main/div/div[2]/div[2]/form/button";
 
 		public static final String checkout_link = "http://nx.com/checkout/";
 		public static final String choose_cod_id = "payment_method_cod";
-		public static final String place_order_xpth = "/html/body/div[2]/div/div/div/main/article/div/div/form[2]/div[2]/div/div/button";
+		public static final String place_order_id = "place_order";
 
 	}
 
 	public static class Preview_NotificationX_Sale_locator {
 		// PREVIEW MODE
-		public static final String product_image_xpath = "/html/body/div[3]/div/div[1]/img";
-		public static final String product_purchased_xpath = "/html/body/div[3]/div/div[2]/div[1]";
-		public static final String product_name_xpath = "/html/body/div[3]/div/div[2]/div[2]";
-		public static final String product_notification_xpath = "/html/body/div[3]/a";
-		public static final String notification_close_button_xpath = "/html/body/div[3]/div/span";
-		public static final String product_purchasing_time_xpath = "/html/body/div[3]/div/div[2]/div[3]/div";
-		public static final String notificationX_link = "/html/body/div[3]/div/div[2]/div[3]/small";
+		public static final String product_image_xpath = "/html/body/div[5]/div/div[1]/img";
+		public static final String product_purchased_xpath = "/html/body/div[5]/div/div[2]/div[1]";
+		public static final String product_name_xpath = "/html/body/div[5]/div/div[2]/div[2]";
+		public static final String product_notification_xpath = "/html/body/div[5]/a";
+		public static final String notification_close_button_xpath = "/html/body/div[5]/div/span";
+		public static final String product_purchasing_time_xpath = "/html/body/div[5]/div/div[2]/div[3]/div";
+		public static final String notificationX_link = "/html/body/div[5]/div/div[2]/div[3]/small";
 
 	}
 
