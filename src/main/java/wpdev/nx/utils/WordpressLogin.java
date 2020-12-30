@@ -7,6 +7,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WordpressLogin {
 	public static void login(WebDriver driver) {
+		
+		driver.findElement(By.id(Config.LOGIN.username_field_id)).clear();
+		driver.findElement(By.id(Config.LOGIN.password_field_id)).clear();
+		
 		driver.findElement(By.id(Config.LOGIN.username_field_id)).sendKeys(Config.LOGIN.username);
 		driver.findElement(By.id(Config.LOGIN.password_field_id)).sendKeys(Config.LOGIN.password);
 		driver.findElement(By.id(Config.LOGIN.login_button_id)).click();
@@ -17,6 +21,9 @@ public class WordpressLogin {
 	}
 	
 	public static void login(WebDriver driver, String username, String password) {
+		driver.findElement(By.id(Config.LOGIN.username_field_id)).clear();
+		driver.findElement(By.id(Config.LOGIN.password_field_id)).clear();
+		
 		driver.findElement(By.id(Config.LOGIN.username_field_id)).sendKeys(username);
 		driver.findElement(By.id(Config.LOGIN.password_field_id)).sendKeys(password);
 		driver.findElement(By.id(Config.LOGIN.login_button_id)).click();

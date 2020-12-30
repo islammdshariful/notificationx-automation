@@ -22,6 +22,8 @@ public class NxELearningNotification {
 		String username = newCandidate(driver);
 //		String username = "SUBS095753 USER just enrolled";
 		eLearnignNotification(driver, username);
+		driver.get(Config.URLS.login_url);
+		WordpressLogin.login(driver);
 		Config.delete_notification(driver, 1);
 	}
 	public static String newCandidate(WebDriver driver) {

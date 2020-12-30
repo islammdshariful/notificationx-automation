@@ -20,7 +20,7 @@ import wpdev.nx.utils.nxDownloadStatNotificationUtils.preview_downstat_notificat
 
 public class NxDownloadStatNotification {
 	public static void testCaseforDownloadStatNotification(WebDriver driver, String url) {
-//		createnxDownStatNotification(driver, url);
+		createnxDownStatNotification(driver, url);
 		downloadStatNotification(driver);
 		Config.delete_notification(driver, 1);
 	}
@@ -28,17 +28,17 @@ public class NxDownloadStatNotification {
 	public static void downloadStatNotification(WebDriver driver) {
 		try {
 			driver.get(Config.URLS.demosite_url);
-//			Thread.sleep(5000);
-//			SoftAssert softassert = new SoftAssert();
-//			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.plugin_link_xpth)).click();
-//
-//			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-//			driver.switchTo().window(tabs.get(1));
-//
-//			Thread.sleep(1000);
-//			softassert.assertEquals(driver.getTitle(), TEXT.plugin_page_title, "PAGE TITLE IS FAILED");
-//			driver.close();
-//			driver.switchTo().window(tabs.get(0));
+			Thread.sleep(5000);
+			SoftAssert softassert = new SoftAssert();
+			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.plugin_link_xpth)).click();
+
+			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			driver.switchTo().window(tabs.get(1));
+
+			Thread.sleep(1000);
+			softassert.assertEquals(driver.getTitle(), TEXT.plugin_page_title, "PAGE TITLE IS FAILED");
+			driver.close();
+			driver.switchTo().window(tabs.get(0));
 
 //			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.notificationX_link_xpth)).click();
 //
@@ -54,7 +54,7 @@ public class NxDownloadStatNotification {
 //			Actions cursor = new Actions(driver);
 //			WebElement close = driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.close_btn_xpth));
 //			cursor.moveToElement(close).click().build().perform();
-//			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.close_btn_xpth)).click();
+			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.close_btn_xpth)).click();
 			Thread.sleep(1000);
 //			softassert.assertAll();
 		} catch (InterruptedException e) {
