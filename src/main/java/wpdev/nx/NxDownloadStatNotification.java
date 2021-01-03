@@ -51,12 +51,9 @@ public class NxDownloadStatNotification {
 //			driver.switchTo().window(tabs2.get(0));
 
 			Thread.sleep(1000);
-//			Actions cursor = new Actions(driver);
-//			WebElement close = driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.close_btn_xpth));
-//			cursor.moveToElement(close).click().build().perform();
 			driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.close_btn_xpth)).click();
 			Thread.sleep(1000);
-//			softassert.assertAll();
+			softassert.assertAll();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -152,9 +149,7 @@ public class NxDownloadStatNotification {
 			driver.findElement(By.id(edit_downstat_notification_LOCATOR.open_in_new_tab_id)).click();
 			;
 			driver.findElement(By.xpath(EDITUTILS.published_button_xpath)).click();
-
-			downloadStatNotification(driver);
-//			Config.delete_notification(driver);
+			
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();

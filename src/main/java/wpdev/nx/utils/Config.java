@@ -112,7 +112,8 @@ public class Config {
 
 	public static class DELETE {
 		public static final String notification_delete_xpath_w_reg = "//*[@id=\"wpbody-content\"]/div[5]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
-		public static final String notification_delete_xpath_wo_reg = "//*[@id=\"wpbody-content\"]/div[6]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[4]";
+//		public static final String notification_delete_xpath_wo_reg = "//*[@id=\"wpbody-content\"]/div[6]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[4]";
+		public static final String notification_delete_xpath_wo_reg = "/html/body/div[1]/div[2]/div[2]/div[1]/div[5]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[4]";
 		public static final String notification_bar_delete_xpth = "//*[@id=\"wpbody-content\"]/div[5]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[4]";
 	}
 

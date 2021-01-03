@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="wpdev.nx.testcases.NX_ReviewsNotification">
+      <class name="wpdev.nx.testcases.NX_SalesNotification">
         <methods>
-          <include name="nxCommentsTestCase"/>
           <include name="invokeBrowser"/>
+          <include name="nxSalesTestCase"/>
         </methods>
-      </class> <!-- wpdev.nx.testcases.NX_ReviewsNotification -->
+      </class> <!-- wpdev.nx.testcases.NX_SalesNotification -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
