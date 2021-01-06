@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-03T10:29:42 BDT" name="Default suite" finished-at="2021-01-03T10:32:35 BDT" duration-ms="172574">
+  <suite started-at="2021-01-06T09:53:17 BDT" name="Default suite" finished-at="2021-01-06T09:56:01 BDT" duration-ms="164196">
     <groups>
     </groups>
-    <test started-at="2021-01-03T10:29:42 BDT" name="Default test" finished-at="2021-01-03T10:32:35 BDT" duration-ms="172574">
+    <test started-at="2021-01-06T09:53:17 BDT" name="Default test" finished-at="2021-01-06T09:56:01 BDT" duration-ms="164196">
       <class name="wpdev.nx.testcases.NX_SalesNotification">
-        <test-method signature="invokeBrowser()[pri:0, instance:wpdev.nx.testcases.NX_SalesNotification@55182842]" started-at="2021-01-03T10:29:42 BDT" name="invokeBrowser" finished-at="2021-01-03T10:29:48 BDT" duration-ms="5759" status="PASS">
+        <test-method signature="invokeBrowser()[pri:0, instance:wpdev.nx.testcases.NX_SalesNotification@55182842]" started-at="2021-01-06T09:53:17 BDT" name="invokeBrowser" finished-at="2021-01-06T09:53:23 BDT" duration-ms="5678" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeBrowser -->
-        <test-method signature="nxSalesTestCase()[pri:0, instance:wpdev.nx.testcases.NX_SalesNotification@55182842]" started-at="2021-01-03T10:29:48 BDT" name="nxSalesTestCase" finished-at="2021-01-03T10:32:35 BDT" depends-on-methods="wpdev.nx.testcases.NX_SalesNotification.invokeBrowser" duration-ms="166779" status="PASS">
+        <test-method signature="nxSalesTestCase()[pri:0, instance:wpdev.nx.testcases.NX_SalesNotification@55182842]" started-at="2021-01-06T09:53:23 BDT" name="nxSalesTestCase" finished-at="2021-01-06T09:56:01 BDT" depends-on-methods="wpdev.nx.testcases.NX_SalesNotification.invokeBrowser" duration-ms="158486" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nxSalesTestCase -->
