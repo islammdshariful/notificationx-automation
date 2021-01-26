@@ -58,9 +58,9 @@ public class nxDownloadStatNotificationUtils {
     }
 
     public static class preview_downstat_notification_LOCATOR{
-        public static final String plugin_link_xpth = "/html/body/div[5]/a";
+        public static final String plugin_link_xpth = "/html/body/div[4]/a";
         //		public static final String plugin_link_xpth = "/html/body/div[5]/div/div[1]";
-        public static final String  close_btn_xpth= "/html/body/div[5]/div/span";
+        public static final String  close_btn_xpth= "/html/body/div[4]/div/span";
     }
 
 }

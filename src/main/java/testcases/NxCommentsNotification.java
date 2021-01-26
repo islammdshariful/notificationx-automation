@@ -50,12 +50,12 @@ public class NxCommentsNotification {
             softassert.assertEquals(driver
                     .findElement(By
                             .xpath(nxCommentsNotificationUtils.preview_comment_notification_LOCATOR.comment_name_xpath))
-                    .getText(), nxCommentsNotificationUtils.TEXT.comment_name_text, "COMMENT TEXT IS FAILED");
+                    .getText(), nxCommentsNotificationUtils.TEXT.comment_name_text, "COMMENTER NAME TEXT IS FAILED");
 
             softassert.assertEquals(driver
                     .findElement(By.xpath(
                             nxCommentsNotificationUtils.preview_comment_notification_LOCATOR.comment_content_xpath))
-                    .getText(), nxCommentsNotificationUtils.TEXT.comment_text, "COMMENT TEXT IS FAILED");
+                    .getText(), nxCommentsNotificationUtils.TEXT.comment_text, "COMMENT CONTENT TEXT IS FAILED");
 
 //			Thread.sleep(2000);
 //			WebElement link = driver.findElement(By.xpath(nxCommentsNotificationUtils.LOCATOR.comment_content_xpath));

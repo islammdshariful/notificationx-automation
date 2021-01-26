@@ -60,13 +60,13 @@ public class nxReviewsNotificationUtils {
 
     public static class preview_review_notification_LOCATOR {
         // PREVIEW MODE
-        public static final String review_image_xpath = "/html/body/div[5]/div/div[1]/img";
-        public static final String review_name_xpath = "/html/body/div[5]/div/div[2]/div[1]";
-        public static final String review_product_name_xpath = "/html/body/div[5]/div/div[2]/div[2]/span";
-        public static final String review_ratings_xpath = "/html/body/div[5]/div/div[2]/div[3]/div/span";
-        public static final String notification_close_button_xpath = "/html/body/div[5]/div/span";
-        public static final String reviews_link_xpath = "/html/body/div[5]/a";
-        public static final String notificationX_link = "/html/body/div[5]/div/div[2]/div[3]/small/a";
+        public static final String review_image_xpath = "/html/body/div[4]/div/div[1]/img";
+        public static final String review_name_xpath = "/html/body/div[4]/div/div[2]/div[1]";
+        public static final String review_product_name_xpath = "/html/body/div[4]/div/div[2]/div[2]/span";
+        public static final String review_ratings_xpath = "/html/body/div[4]/div/div[2]/div[3]/div/span";
+        public static final String notification_close_button_xpath = "/html/body/div[4]/div/span";
+        public static final String reviews_link_xpath = "/html/body/div[4]/a";
+        public static final String notificationX_link = "/html/body/div[4]/div/div[2]/div[3]/small/a";
 
     }
 

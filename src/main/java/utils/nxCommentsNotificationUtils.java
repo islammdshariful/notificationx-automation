@@ -77,13 +77,13 @@ public class nxCommentsNotificationUtils {
 
     public static class preview_comment_notification_LOCATOR {
         // PREVIEW MODE
-        public static final String comment_image_xpath = "/html/body/div[5]/div/div[1]/img";
-        public static final String comment_name_xpath = "/html/body/div[5]/div/div[2]/div[1]";
-        public static final String comment_content_xpath = "/html/body/div[5]/div/div[2]/div[2]/span";
-        public static final String notification_close_button_xpath = "/html/body/div[5]/div/span";
-        public static final String comment_link_xpath = "/html/body/div[5]/a";
-        public static final String time_xpth = "/html/body/div[5]/div/div[2]/div[3]/div/span/small";
-        public static final String notificationX_link = "/html/body/div[5]/div/div[2]/div[3]/small";
+        public static final String comment_image_xpath = "/html/body/div[4]/div/div[1]/img";
+        public static final String comment_name_xpath = "/html/body/div[4]/div/div[2]/div[1]";
+        public static final String comment_content_xpath = "/html/body/div[4]/div/div[2]/div[2]/span";
+        public static final String notification_close_button_xpath = "/html/body/div[4]/div/span";
+        public static final String comment_link_xpath = "/html/body/div[4]/a";
+        public static final String time_xpth = "/html/body/div[4]/div/div[2]/div[3]/div/span/small";
+        public static final String notificationX_link = "/html/body/div[4]/div/div[2]/div[3]/small";
 
         public static final String post_page_title_xpath = "/html/body/div[2]/div/div/div/main/article/div/header/div/h1";
     }

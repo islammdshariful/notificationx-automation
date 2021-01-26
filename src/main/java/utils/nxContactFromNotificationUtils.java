@@ -15,11 +15,18 @@ public class nxContactFromNotificationUtils {
         public static final String display_for_text = "60";
         public static final String display_from_text = "10";
 
-        public static final String contact_form_url = "http://nx.com/a-notificationx-form-wpform/";
+        public static final String contact_form_url = "http://nx.com/wp-form/";
         public static final String input_fname_text = "Webdriver";
         public static final String input_lname_text = "Automation";
         public static final String input_email_text = "Sabbir@gmail.com";
         public static final String input_message_text = "This Automation is for testing notificationX in Contact From.";
+
+
+//        public static final String contact_form_url = "http://nx.com/a-notificationx-form-wpform/";
+//        public static final String input_fname_text = "Webdriver";
+//        public static final String input_lname_text = "Automation";
+//        public static final String input_email_text = "Sabbir@gmail.com";
+//        public static final String input_message_text = "This Automation is for testing notificationX in Contact From.";
 
         public static final String name_text = input_fname_text + " Recently Contacted Via";
         public static final String contacform_name_text = slelect_form_text;
@@ -70,23 +77,30 @@ public class nxContactFromNotificationUtils {
 
     }
 
-    public static class contact_LOCATOR{
-        public static final String page_url = "http://nx.com/elementor-24995/";
+    public static class contact_LOCATOR {
+//        public static final String page_url = "http://nx.com/elementor-24995/";
+//        public static final String input_fname_id = "wpforms-25034-field_0";
+//        public static final String input_lname_id = "wpforms-25034-field_0-last";
+//        public static final String input_email_id = "wpforms-25034-field_1";
+//        public static final String input_message_id = "wpforms-25034-field_2";
+//        public static final String submit_button_id = "wpforms-submit-25034";
+
         public static final String input_fname_id = "wpforms-25034-field_0";
         public static final String input_lname_id = "wpforms-25034-field_0-last";
         public static final String input_email_id = "wpforms-25034-field_1";
         public static final String input_message_id = "wpforms-25034-field_2";
         public static final String submit_button_id = "wpforms-submit-25034";
+
     }
 
-    public static class preview_contactform_notification_LOCATOR{
+    public static class preview_contactform_notification_LOCATOR {
 
-        public static final String img_xpth = "/html/body/div[5]/div/div[1]/img";
-        public static final String name_xpth = "/html/body/div[5]/div/div[2]/div[1]";
-        public static final String contactform_xpth = "/html/body/div[5]/div/div[2]/div[2]/span";
-        public static final String time_xpth = "/html/body/div[5]/div/div[2]/div[3]/div/span/small";
-        public static final String notificationX_link_xpth = "/html/body/div[5]/div/div[2]/div[3]/small";
-        public static final String close_btn_xpth = "/html/body/div[5]/div/span";
+        public static final String img_xpth = "/html/body/div[4]/div/div[1]/img";
+        public static final String name_xpth = "/html/body/div[4]/div/div[2]/div[1]";
+        public static final String contactform_xpth = "/html/body/div[4]/div/div[2]/div[2]/span";
+        public static final String time_xpth = "/html/body/div[4]/div/div[2]/div[3]/div/span/small";
+        public static final String notificationX_link_xpth = "/html/body/div[4]/div/div[2]/div[3]/small";
+        public static final String close_btn_xpth = "/html/body/div[4]/div/span";
 
     }
 }

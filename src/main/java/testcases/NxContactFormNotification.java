@@ -21,6 +21,7 @@ public class NxContactFormNotification {
         contactFormNotification(driver);
         Config.delete_notification(driver, 0);
     }
+
     public static void doSubmitForm(WebDriver driver) {
         driver.get(nxContactFromNotificationUtils.TEXT.contact_form_url);
         driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_fname_id))
@@ -35,6 +36,21 @@ public class NxContactFormNotification {
         js.executeScript("window.scrollBy(0,308)", "");
         driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.submit_button_id)).click();
     }
+
+//    public static void doSubmitForm(WebDriver driver) {
+//        driver.get(nxContactFromNotificationUtils.TEXT.contact_form_url);
+//        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_fname_id))
+//                .sendKeys(nxContactFromNotificationUtils.TEXT.input_fname_text);
+//        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_lname_id))
+//                .sendKeys(nxContactFromNotificationUtils.TEXT.input_lname_text);
+//        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_email_id))
+//                .sendKeys(nxContactFromNotificationUtils.TEXT.input_email_text);
+//        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_message_id))
+//                .sendKeys(nxContactFromNotificationUtils.TEXT.input_message_text);
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0,308)", "");
+//        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.submit_button_id)).click();
+//    }
 
     public static void contactFormNotification(WebDriver driver) {
         driver.get(Config.URLS.demosite_url);

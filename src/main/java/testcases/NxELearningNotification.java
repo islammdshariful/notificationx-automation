@@ -17,7 +17,7 @@ import utils.nxELearningNotificationUtils.edit_elearning_notification_LOCATOR;
 import utils.nxELearningNotificationUtils.preview_learning_notification_LOCATOR;
 
 public class NxELearningNotification {
-    public static void testCaseforDownloadStatNotification(WebDriver driver, String url) {
+    public static void testCaseforELearningNotification(WebDriver driver, String url) {
         createELearningNotification(driver, url);
         String username = newCandidate(driver);
 //		String username = "SUBS095753 USER just enrolled";

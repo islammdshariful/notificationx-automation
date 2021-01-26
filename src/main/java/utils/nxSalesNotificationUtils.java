@@ -94,13 +94,13 @@ public class nxSalesNotificationUtils {
 
     public static class Preview_NotificationX_Sale_locator {
         // PREVIEW MODE
-        public static final String product_image_xpath = "/html/body/div[5]/div/div[1]/img";
-        public static final String product_purchased_xpath = "/html/body/div[5]/div/div[2]/div[1]";
-        public static final String product_name_xpath = "/html/body/div[5]/div/div[2]/div[2]";
-        public static final String product_notification_xpath = "/html/body/div[5]/a";
-        public static final String notification_close_button_xpath = "/html/body/div[5]/div/span";
-        public static final String product_purchasing_time_xpath = "/html/body/div[5]/div/div[2]/div[3]/div";
-        public static final String notificationX_link = "/html/body/div[5]/div/div[2]/div[3]/small";
+        public static final String product_image_xpath = "/html/body/div[4]/div/div[1]/img";
+        public static final String product_purchased_xpath = "/html/body/div[4]/div/div[2]/div[1]";
+        public static final String product_name_xpath = "/html/body/div[4]/div/div[2]/div[2]";
+        public static final String product_notification_xpath = "/html/body/div[4]/a";
+        public static final String notification_close_button_xpath = "/html/body/div[4]/div/span";
+        public static final String product_purchasing_time_xpath = "/html/body/div[4]/div/div[2]/div[3]/div";
+        public static final String notificationX_link = "/html/body/div[4]/div/div[2]/div[3]/small";
 
     }
 }

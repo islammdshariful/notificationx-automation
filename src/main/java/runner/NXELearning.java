@@ -19,14 +19,14 @@ public class NXELearning {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
     }
 
     @Test(dependsOnMethods = "invokeBrowser")
     public void nxCommentsTestCase() {
 //		driver.get(Config.URLS.login_url);
 //		WordpressLogin.login(driver);
-        NxELearningNotification.testCaseforDownloadStatNotification(driver, Config.URLS.login_url);
+        NxELearningNotification.testCaseforELearningNotification(driver, Config.URLS.login_url);
         driver.close();
     }
 }

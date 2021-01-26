@@ -72,13 +72,13 @@ public class nxELearningNotificationUtils {
 
     public static class preview_learning_notification_LOCATOR{
 
-        public static final String img_xpth = "/html/body/div[3]/div/div[1]/img";
-        public static final String name_xpth = "/html/body/div[3]/div/div[2]/div[1]";
-        public static final String coursename_xpth = "/html/body/div[3]/div/div[2]/div[2]/span";
-        public static final String time_xpth = "/html/body/div[3]/div/div[2]/div[3]/div/span/small";
-        public static final String notificationX_link_xpth = "/html/body/div[3]/div/div[2]/div[3]/small";
-        public static final String close_btn_xpth = "/html/body/div[3]/div/span";
-        public static final String course_link_xpth = "/html/body/div[3]/a";
+        public static final String img_xpth = "/html/body/div[2]/div/div[1]/img";
+        public static final String name_xpth = "/html/body/div[2]/div/div[2]/div[1]";
+        public static final String coursename_xpth = "/html/body/div[2]/div/div[2]/div[2]/span";
+        public static final String time_xpth = "/html/body/div[2]/div/div[2]/div[3]/div/span/small";
+        public static final String notificationX_link_xpth = "/html/body/div[2]/div/div[2]/div[3]/small";
+        public static final String close_btn_xpth = "/html/body/div[2]/div/span";
+        public static final String course_link_xpth = "/html/body/div[2]/a";
 
     }
 }

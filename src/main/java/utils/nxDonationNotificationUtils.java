@@ -73,13 +73,13 @@ public class nxDonationNotificationUtils {
 
     public static class preview_donation_notification_LOCATOR{
 
-        public static final String img_xpth = "/html/body/div[5]/div/div[1]/img";
-        public static final String name_xpth = "/html/body/div[5]/div/div[2]/div[1]";
-        public static final String donate_xpth = "/html/body/div[5]/div/div[2]/div[2]";
-        public static final String time_xpth = "/html/body/div[5]/div/div[2]/div[3]/div";
-        public static final String notificationX_link_xpth = "/html/body/div[5]/div/div[2]/div[3]/small";
-        public static final String close_btn_xpth = "/html/body/div[5]/div/span";
-        public static final String donate_page_link_xpth = "/html/body/div[5]/a";
+        public static final String img_xpth = "/html/body/div[4]/div/div[1]/img";
+        public static final String name_xpth = "/html/body/div[4]/div/div[2]/div[1]";
+        public static final String donate_xpth = "/html/body/div[4]/div/div[2]/div[2]";
+        public static final String time_xpth = "/html/body/div[4]/div/div[2]/div[3]/div";
+        public static final String notificationX_link_xpth = "/html/body/div[4]/div/div[2]/div[3]/small";
+        public static final String close_btn_xpth = "/html/body/div[4]/div/span";
+        public static final String donate_page_link_xpth = "/html/body/div[4]/a";
 
     }
 }

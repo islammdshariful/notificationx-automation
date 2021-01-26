@@ -91,7 +91,7 @@ public class NxDownloadStatNotification {
                     .click();
             driver.findElement(By.xpath(Config.EDITUTILS.next_design_button_xpath)).click();
             // --------------------------------------Content------------------------------
-            js.executeScript("window.scrollBy(0,-354)", "");
+            js.executeScript("window.scrollBy(0,-581)", "");
             Config.double_click_xpth(driver, edit_downstat_notification_LOCATOR.product_type_dropdown_xpth);
             driver.findElement(By.id(edit_downstat_notification_LOCATOR.slug_id)).sendKeys(TEXT.slug_name_text);
             Config.double_click_xpth(driver, edit_downstat_notification_LOCATOR.name_dropdown_xpth);
