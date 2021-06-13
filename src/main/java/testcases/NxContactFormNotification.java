@@ -23,37 +23,21 @@ public class NxContactFormNotification {
     }
 
     public static void doSubmitForm(WebDriver driver) {
-        driver.get(nxContactFromNotificationUtils.TEXT.contact_form_url);
-        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_fname_id))
+        driver.get(Config.URLS.root_url + nxContactFromNotificationUtils.TEXT.contact_form_url);
+        driver.findElement(By.name(nxContactFromNotificationUtils.contact_LOCATOR.input_name_name))
                 .sendKeys(nxContactFromNotificationUtils.TEXT.input_fname_text);
-        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_lname_id))
-                .sendKeys(nxContactFromNotificationUtils.TEXT.input_lname_text);
-        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_email_id))
+        driver.findElement(By.name(nxContactFromNotificationUtils.contact_LOCATOR.input_email_name))
                 .sendKeys(nxContactFromNotificationUtils.TEXT.input_email_text);
-        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_message_id))
+        driver.findElement(By.name(nxContactFromNotificationUtils.contact_LOCATOR.input_message_name))
                 .sendKeys(nxContactFromNotificationUtils.TEXT.input_message_text);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,308)", "");
-        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.submit_button_id)).click();
+        driver.findElement(By.xpath(nxContactFromNotificationUtils.contact_LOCATOR.submit_button_xpth)).click();
     }
 
-//    public static void doSubmitForm(WebDriver driver) {
-//        driver.get(nxContactFromNotificationUtils.TEXT.contact_form_url);
-//        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_fname_id))
-//                .sendKeys(nxContactFromNotificationUtils.TEXT.input_fname_text);
-//        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_lname_id))
-//                .sendKeys(nxContactFromNotificationUtils.TEXT.input_lname_text);
-//        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_email_id))
-//                .sendKeys(nxContactFromNotificationUtils.TEXT.input_email_text);
-//        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.input_message_id))
-//                .sendKeys(nxContactFromNotificationUtils.TEXT.input_message_text);
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("window.scrollBy(0,308)", "");
-//        driver.findElement(By.id(nxContactFromNotificationUtils.contact_LOCATOR.submit_button_id)).click();
-//    }
 
     public static void contactFormNotification(WebDriver driver) {
-        driver.get(Config.URLS.demosite_url);
+        driver.get(Config.URLS.root_url);
         SoftAssert softassert = new SoftAssert();
         try {
             WebElement image = driver.findElement(By.xpath(preview_contactform_notification_LOCATOR.img_xpth));

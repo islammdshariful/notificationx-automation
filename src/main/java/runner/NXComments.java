@@ -13,7 +13,6 @@ import utils.WordpressLogin;
 public class NXComments {
     WebDriver driver = null;
 
-    @Test
     public void invokeBrowser() {
         driver = DriverManager.driver;
         driver.manage().deleteAllCookies();
@@ -22,11 +21,12 @@ public class NXComments {
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
 
-    @Test(dependsOnMethods = "invokeBrowser")
+    @Test
     public void nxCommentsTestCase() {
-//		driver.get("http://nx.com/wp-login.php");
-//		WordpressLogin.login(driver);
-        NxCommentsNotification.testCaseforCommnetNotification(driver, Config.URLS.login_url);
+        invokeBrowser();
+        driver.get(Config.URLS.login_url);
+		WordpressLogin.login(driver);
+        NxCommentsNotification.testCaseforCommnetNotification(driver, Config.URLS.admin_url);
         driver.close();
     }
 }

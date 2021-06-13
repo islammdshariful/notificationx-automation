@@ -25,8 +25,8 @@ public class NxReviewsNotification {
     }
 
     public static void reviewNotification(WebDriver driver, String p_name) {
-        driver.get(Config.URLS.demosite_url);
-        System.out.println("Passit" + p_name);
+        driver.get(Config.URLS.root_url);
+
         try {
             Thread.sleep(2000);
 
@@ -84,23 +84,30 @@ public class NxReviewsNotification {
     }
 
     public static String doReview(WebDriver driver) {
-        driver.findElement(By.xpath(nxReviewsNotificationUtils.review_product_LOCATOR.product_option_menu_xpath))
-                .click();
-        WebElement product = driver
-                .findElement(By.xpath(nxReviewsNotificationUtils.review_product_LOCATOR.product_xpath));
-        String product_name = product.getText();
-        Actions cursor = new Actions(driver);
-        WebElement view_product = driver
-                .findElement(By.xpath(nxReviewsNotificationUtils.review_product_LOCATOR.view_product));
-
-        cursor.moveToElement(product).moveToElement(view_product).click().build().perform();
+//        driver.findElement(By.xpath(nxReviewsNotificationUtils.review_product_LOCATOR.product_option_menu_xpath))
+//                .click();
+//        WebElement product = driver
+//                .findElement(By.xpath(nxReviewsNotificationUtils.review_product_LOCATOR.product_xpath));
+//        String product_name = product.getText();
+//        Actions cursor = new Actions(driver);
+//        WebElement view_product = driver
+//                .findElement(By.xpath(nxReviewsNotificationUtils.review_product_LOCATOR.view_product));
+//
+//        cursor.moveToElement(product).moveToElement(view_product).click().build().perform();
 //		driver.findElement(By.xpath(review_product_LOCATOR.product_edit_xpath)).click();
 //		System.out.println(product_name);
 //		driver.findElement(By.id(review_product_LOCATOR.product_link_id)).click();
 
+        driver.get(Config.URLS.root_url + "product/polo/");
+
+        String product_name = driver.findElement(By.xpath("/html/body/div[2]/div/div/div/main/div[2]/div[2]/h1")).getText();
+
         driver.findElement(By.id("tab-title-reviews")).click();
+        driver.findElement(By.id("comment")).click();
+        driver.findElement(By.id("comment")).clear();
         driver.findElement(By.id("comment")).sendKeys(nxReviewsNotificationUtils.TEXT.review_text);
-        driver.findElement(By.xpath("//*[@id=\"commentform\"]/div/p/span/a[5]")).click();
+
+        driver.findElement(By.xpath("//*[@id=\"commentform\"]/div/p/span/a[4]")).click();
         driver.findElement(By.id("submit")).click();
         return product_name;
     }
@@ -110,7 +117,7 @@ public class NxReviewsNotification {
 
         try {
             // LOGIN
-            WordpressLogin.login(driver);
+//            WordpressLogin.login(driver);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,827)", "");

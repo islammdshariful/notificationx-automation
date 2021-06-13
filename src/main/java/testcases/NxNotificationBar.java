@@ -16,7 +16,7 @@ import utils.nxNotificationBarUtils.CountDown_TEXT;
 
 public class NxNotificationBar {
     public static void testCaseforNotificationBar(WebDriver driver, String url, int theme) {
-        createNotificationBar(driver, url, theme);
+//        createNotificationBar(driver, url, theme);
         nxBar(driver, theme);
         Config.delete_notification(driver, 3);
     }
@@ -25,7 +25,7 @@ public class NxNotificationBar {
         try {
             driver.get(edit_url);
             // LOGIN
-            WordpressLogin.login(driver);
+//            WordpressLogin.login(driver);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,827)", "");
@@ -72,6 +72,10 @@ public class NxNotificationBar {
             // expiry date
             driver.findElement(By.id(nxNotificationBarUtils.CountDown_Locator.start_date_field_id)).click();
             Thread.sleep(1000);
+//            driver.findElement(By.xpath("/html/body/div[9]/div[1]/span[2]/svg")).click();
+//            Thread.sleep(1000);
+//            driver.findElement(By.xpath("/html/body/div[9]/div[2]/div/div[2]/div/span[21]")).click();
+
             driver.findElement(By.xpath(nxNotificationBarUtils.CountDown_Locator.start_choose_date_xpath)).click();
 
 //			driver.findElement(By.id(nxNotificationBarUtils.CountDown_Locator.countdown_text_id)).click();
@@ -108,14 +112,18 @@ public class NxNotificationBar {
     }
 
     public static void nxBar(WebDriver driver, int theme) {
-        driver.get(Config.URLS.demosite_url);
+        driver.get(Config.URLS.root_url);
+
         SoftAssert softAssert = new SoftAssert();
         try {
             Thread.sleep(1000);
 
-            softAssert.assertEquals(driver
+            String countdown_text = driver
                     .findElement(By.xpath(nxNotificationBarUtils.CountDown_Locator.notification_countdown_text_xpath))
-                    .getText(), nxNotificationBarUtils.CountDown_TEXT.countdown_text);
+                    .getText();
+            System.out.println(countdown_text);
+
+            softAssert.assertEquals(countdown_text, nxNotificationBarUtils.CountDown_TEXT.countdown_text);
 
             System.out.println("Countdown text is VISIBLE");
             softAssert.assertEquals(

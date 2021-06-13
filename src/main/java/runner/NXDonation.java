@@ -25,7 +25,7 @@ public class NXDonation {
 
     @Test(dependsOnMethods = "invokeBrowser")
     public void nxCommentsTestCase() {
-//		driver.get("http://nx.com/wp-login.php");
+//        driver.get(Config.URLS.login_url);
 //		WordpressLogin.login(driver);
         NxDonationNotification.testCaseforDonationNotification(driver, Config.URLS.login_url);
         driver.close();

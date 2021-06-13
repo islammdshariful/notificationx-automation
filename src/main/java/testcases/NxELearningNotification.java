@@ -18,7 +18,7 @@ import utils.nxELearningNotificationUtils.preview_learning_notification_LOCATOR;
 
 public class NxELearningNotification {
     public static void testCaseforELearningNotification(WebDriver driver, String url) {
-        createELearningNotification(driver, url);
+//        createELearningNotification(driver, url);
         String username = newCandidate(driver);
 //		String username = "SUBS095753 USER just enrolled";
         eLearnignNotification(driver, username);
@@ -37,18 +37,20 @@ public class NxELearningNotification {
         WordpressLogin.login(driver, username, "1234");
 
         // Enrolling
-        driver.get("http://nx.com/courses/notifciationx-automation-for-tutor-lms/");
+//        driver.get("http://nx.com/courses/notifciationx-automation-for-tutor-lms/");
+//        driver.get("http://notificationx.local/courses/tutor-lms-first-lesson/");
+        driver.get(Config.URLS.root_url + nxELearningNotificationUtils.course_page.couse_url);
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,610)", "");
 
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/div/div[2]/div/div[1]/div[4]/form/div/button"))
+        driver.findElement(By.xpath(nxELearningNotificationUtils.course_page.enroll_btn_xpth))
                 .click();
         return username;
     }
 
     public static void eLearnignNotification(WebDriver driver, String username) {
-        driver.get(Config.URLS.demosite_url);
+        driver.get(Config.URLS.root_url);
         SoftAssert softassert = new SoftAssert();
         try {
             WebElement image = driver.findElement(By.xpath(preview_learning_notification_LOCATOR.img_xpth));
@@ -86,20 +88,6 @@ public class NxELearningNotification {
             driver.close();
             driver.switchTo().window(tabs.get(0));
 
-//			Thread.sleep(4000);
-//			driver.findElement(
-//					By.xpath(nxELearningNotificationUtils.preview_learning_notification_LOCATOR.notificationX_link_xpth))
-//					.click();
-//
-//			ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-//			driver.switchTo().window(tabs2.get(1));
-//
-//			softassert.assertEquals(driver.getTitle(), "NotificationX - Best Social Proof & FOMO Marketing Solution",
-//					"NOTIFCATION LINK IS FAILED");
-////			System.out.println("NotificationX link passed !!");
-//			driver.close();
-//			driver.switchTo().window(tabs2.get(0));
-
             Thread.sleep(1000);
             driver.findElement(By.xpath(preview_learning_notification_LOCATOR.close_btn_xpth)).click();
             Thread.sleep(1000);
@@ -115,7 +103,7 @@ public class NxELearningNotification {
 
         try {
             // LOGIN
-            WordpressLogin.login(driver);
+//            WordpressLogin.login(driver);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,827)", "");

@@ -24,7 +24,7 @@ public class NXContactFrom {
 
     @Test(dependsOnMethods = "invokeBrowser")
     public void nxContactFormTestCase() {
-//		driver.get("http://nx.com/wp-login.php");
+//        driver.get(Config.URLS.login_url);
 //		WordpressLogin.login(driver);
         NxContactFormNotification.testCaseforContactFormNotification(driver, Config.URLS.login_url);
         driver.close();

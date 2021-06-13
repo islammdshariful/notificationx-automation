@@ -7,7 +7,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
 import utils.Config;
@@ -42,7 +41,7 @@ public class NxDonationNotification {
     }
 
     public static void donationNotification(WebDriver driver) {
-        driver.get(Config.URLS.demosite_url);
+        driver.get(Config.URLS.root_url);
         SoftAssert softassert = new SoftAssert();
         try {
             WebElement image = driver.findElement(By.xpath(preview_donation_notification_LOCATOR.img_xpth));

@@ -43,10 +43,10 @@ public class nxNotificationBarUtils {
         public static final String countdown_text_id = "nx_meta_countdown_text";
         public static final String expired_text_id = "nx_meta_countdown_expired_text";
         public static final String start_date_field_id = "nx_meta_countdown_start_date";
-        public static final String start_choose_date_xpath = "/html/body/div[10]/div[2]/div/div[2]/div/span[18]";
-        public static final String arrow_next_xpath = "/html/body/div[11]/div[1]/span[2]";
+        public static final String start_choose_date_xpath = "/html/body/div[9]/div[2]/div/div[2]/div/span[21]";
+        public static final String arrow_next_xpath = "/html/body/div[10]/div[1]/span[2]";
         public static final String end_date_field_id = "nx_meta_countdown_end_date";
-        public static final String end_choose_date_xpath = "/html/body/div[11]/div[2]/div/div[2]/div/span[18]";
+        public static final String end_choose_date_xpath = "/html/body/div[10]/div[2]/div/div[2]/div/span[21]";
         public static final String permanent_close_id = "nx_meta_close_forever";
 
         // TIMING

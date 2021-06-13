@@ -15,7 +15,7 @@ public class nxContactFromNotificationUtils {
         public static final String display_for_text = "60";
         public static final String display_from_text = "10";
 
-        public static final String contact_form_url = "http://nx.com/wp-form/";
+        public static final String contact_form_url = "a-contact-cf7-nx/";
         public static final String input_fname_text = "Webdriver";
         public static final String input_lname_text = "Automation";
         public static final String input_email_text = "Sabbir@gmail.com";
@@ -78,19 +78,11 @@ public class nxContactFromNotificationUtils {
     }
 
     public static class contact_LOCATOR {
-//        public static final String page_url = "http://nx.com/elementor-24995/";
-//        public static final String input_fname_id = "wpforms-25034-field_0";
-//        public static final String input_lname_id = "wpforms-25034-field_0-last";
-//        public static final String input_email_id = "wpforms-25034-field_1";
-//        public static final String input_message_id = "wpforms-25034-field_2";
-//        public static final String submit_button_id = "wpforms-submit-25034";
-
-        public static final String input_fname_id = "wpforms-25034-field_0";
-        public static final String input_lname_id = "wpforms-25034-field_0-last";
-        public static final String input_email_id = "wpforms-25034-field_1";
-        public static final String input_message_id = "wpforms-25034-field_2";
-        public static final String submit_button_id = "wpforms-submit-25034";
-
+        public static final String input_name_name = "your-name";
+        public static final String input_email_name = "your-email";
+        public static final String input_subject_name = "your-subject";
+        public static final String input_message_name = "your-message";
+        public static final String submit_button_xpth = "//*[@id=\"wpcf7-f5-p80-o1\"]/form/p[5]/input";
     }
 
     public static class preview_contactform_notification_LOCATOR {

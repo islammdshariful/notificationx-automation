@@ -17,7 +17,7 @@ import utils.nxSalesNotificationUtils;
 public class NxCommentsNotification {
     public static void testCaseforCommnetNotification(WebDriver driver, String url) {
         createCommentsNotification(driver, url);
-        doComments(driver, nxCommentsNotificationUtils.TEXT.post_link);
+        doComments(driver, Config.URLS.root_url + nxCommentsNotificationUtils.TEXT.post_link);
         commentNotification(driver);
         Config.delete_notification(driver, 1); //if re-generate option is available put 1 else 0
     }
@@ -33,7 +33,7 @@ public class NxCommentsNotification {
     }
 
     public static void commentNotification(WebDriver driver) {
-        driver.get("http://nx.com/");
+        driver.get(Config.URLS.root_url);
 
         SoftAssert softassert = new SoftAssert();
         try {

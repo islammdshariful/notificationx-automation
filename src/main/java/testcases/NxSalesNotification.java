@@ -1,6 +1,7 @@
 package testcases;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,9 +10,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
 import utils.Config;
+import utils.DriverManager;
 import utils.WordpressLogin;
 import utils.nxSalesNotificationUtils;
 
@@ -19,7 +23,6 @@ public class NxSalesNotification {
     public static void testCaseforSalesNotification(WebDriver driver, String url) {
         createSalesNotification(driver, url);
         String product_name = doBuy_product(driver);
-//		String product_name = "Organic Handpicked Coffee";
         salesNotification(driver, product_name);
         Config.delete_notification(driver, 1);
     }
@@ -29,7 +32,7 @@ public class NxSalesNotification {
 
         try {
             // LOGIN
-            WordpressLogin.login(driver);
+//            WordpressLogin.login(driver);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,827)", "");
@@ -196,51 +199,57 @@ public class NxSalesNotification {
     }
 
     public static String doBuy_product(WebDriver driver) {
-        driver.findElement(By.xpath(nxSalesNotificationUtils.Buy_product.product_option_xpath)).click();
-        WebElement product = driver.findElement(By.xpath(nxSalesNotificationUtils.Buy_product.product_xpath));
-        String product_name = product.getText();
-        WebElement view_product = driver.findElement(By.xpath(nxSalesNotificationUtils.Buy_product.view_product_xpth));
-        Actions cursor = new Actions(driver);
-        cursor.moveToElement(product).moveToElement(view_product).click().build().perform();
-        // PRODUCT PAGE
-        SoftAssert softassert = new SoftAssert();
-        softassert.assertEquals(driver.findElement(By.xpath(nxSalesNotificationUtils.Buy_product.product_name_page)),
-                product_name);
+        driver.get(Config.URLS.root_url + "product/t-shirt/");
+        String product_name = driver.findElement(By.xpath("/html/body/div[2]/div/div/div/main/div[2]/div[2]/h1")).getText();
+//        driver.findElement(By.xpath(nxSalesNotificationUtils.Buy_product.product_option_xpath)).click();
+//        WebElement product = driver.findElement(By.xpath(nxSalesNotificationUtils.Buy_product.product_xpath));
+//        String product_name = product.getText();
+//        WebElement view_product = driver.findElement(By.xpath(nxSalesNotificationUtils.Buy_product.view_product_xpth));
+//        Actions cursor = new Actions(driver);
+//        cursor.moveToElement(product).moveToElement(view_product).click().build().perform();
+//        // PRODUCT PAGE
+//        SoftAssert softassert = new SoftAssert();
+//        softassert.assertEquals(driver.findElement(By.xpath(nxSalesNotificationUtils.Buy_product.product_name_page)),
+//                product_name);
         // ADD TO CART
         driver.findElement(By.xpath(nxSalesNotificationUtils.Buy_product.addtocart_xpath)).click();
 
-        // Checkout page
-        driver.get(nxSalesNotificationUtils.Buy_product.checkout_link);
+        driver.findElement(By.xpath("//*[@id=\"main\"]/div[1]/div/a")).click();
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1000)", "");
+
+        // Checkout page
+        driver.get(Config.URLS.root_url + nxSalesNotificationUtils.Buy_product.checkout_link);
+
         try {
-            Thread.sleep(10000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,1300)", "");
 
         driver.findElement(By.id(nxSalesNotificationUtils.Buy_product.place_order_id)).click();
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-//
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div/div/main/article/header/h1")));
-//		String checkout = element.getText();
-//		softassert.assertEquals(checkout, "Checkout");
+
+        String success = driver.findElement(By.xpath("/html/body/div[2]/div/div/div/main/article/header/h1")).getText();
+        if(success.equals("Order received")){
+            System.out.println("order purchase successful");
+        }
+
         return product_name;
     }
 
     public static void salesNotification(WebDriver driver, String prodcut_name) {
         try {
-            driver.get(Config.URLS.demosite_url);
+            driver.get(Config.URLS.root_url);
             SoftAssert softassert = new SoftAssert();
-            Thread.sleep(10000);
+            Thread.sleep(5000);
             driver.findElement(
                     By.xpath(nxSalesNotificationUtils.Preview_NotificationX_Sale_locator.product_notification_xpath))
                     .click();
@@ -268,26 +277,11 @@ public class NxSalesNotification {
             } else {
                 System.out.println("Time Is NOT VISIBLE");
             }
-            Thread.sleep(1500);
-//			driver.findElement(By.xpath(nxSalesNotificationUtils.Preview_NotificationX_Sale_locator.notificationX_link))
-//					.click();
-//
-//
-//			ArrayList<String> tabs3 = new ArrayList<String>(driver.getWindowHandles());
-//			driver.switchTo().window(tabs3.get(1));
-//
-//			softassert.assertEquals(driver.getTitle().toString(),
-//					nxSalesNotificationUtils.Sales_notification_TEXT.notificationX_link_page_title);
-//
-//			driver.close();
-//			driver.switchTo().window(tabs3.get(0));
-//
-//			Thread.sleep(3000);
+
             driver.findElement(By
                     .xpath(nxSalesNotificationUtils.Preview_NotificationX_Sale_locator.notification_close_button_xpath))
                     .click();
 
-//			Config.delete_notification(driver);
             softassert.assertAll();
         } catch (InterruptedException e) {
             e.printStackTrace();

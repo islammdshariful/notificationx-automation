@@ -23,7 +23,7 @@ public class nxCommentsNotificationUtils {
 
         public static final String notificaion_size = "450";
 
-        public static final String post_link = "http://nx.com/notificationx-comment/";
+        public static final String post_link = "lorem-ipsum-is-simply-a-dummy-text/";
     }
 
     public static class edit_comment_notification_LOCATOR {

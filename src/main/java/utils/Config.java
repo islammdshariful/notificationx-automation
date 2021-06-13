@@ -1,5 +1,7 @@
 package utils;
 
+import java.net.URL;
+import java.security.PublicKey;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -28,7 +30,7 @@ public class Config {
 
         // user info
         driver.findElement(By.id("user_login")).sendKeys(username);
-        driver.findElement(By.id("email")).sendKeys(username + "@dev.com");
+        driver.findElement(By.id("email")).sendKeys(username + "@nx.com");
         driver.findElement(By.id("first_name")).sendKeys(username.toUpperCase());
         driver.findElement(By.id("last_name")).sendKeys("USER");
         driver.findElement(By.id("pass1")).clear();
@@ -50,7 +52,7 @@ public class Config {
 
     public static void delete_notification(WebDriver driver, int reg) {
         try {
-            driver.get("http://nx.com/wp-admin/");
+            driver.get(URLS.root_url + "wp-admin/");
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,593)", "");
 
@@ -92,9 +94,11 @@ public class Config {
     }
 
     public static class URLS {
-        public static final String demosite_url = "http://nx.com/";
-        public static final String login_url = "http://nx.com/wp-login.php";
+        public static final String root_url = "http://nx.com/";
+        public static final String login_url = root_url + "wp-login.php";
+        public static final String admin_url = root_url + "wp-admin/";
     }
+
 
     public static class UTILS {
         public static final String wordpress_home_xpath = "//*[@id=\"menu-dashboard\"]/ul/li[2]/a";
@@ -110,8 +114,7 @@ public class Config {
     }
 
     public static class DELETE {
-        public static final String notification_delete_xpath_w_reg = "//*[@id=\"wpbody-content\"]/div[4]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[5]";
-        //		public static final String notification_delete_xpath_wo_reg = "//*[@id=\"wpbody-content\"]/div[6]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[4]";
+        public static final String notification_delete_xpath_w_reg = "//*[@id=\"wpbody-content\"]/div[4]/div[5]/table/tbody/tr/td[1]/div/div/a[5]";
         public static final String notification_delete_xpath_wo_reg = "//*[@id=\"wpbody-content\"]/div[4]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[4]";
         public static final String notification_bar_delete_xpth = "//*[@id=\"wpbody-content\"]/div[4]/div[5]/table/tbody/tr[1]/td[1]/div/div/a[4]";
     }

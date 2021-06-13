@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
 import testcases.NxNotificationBar;
 import utils.Config;
 import utils.DriverManager;
+import utils.WordpressLogin;
 
 public class NXNotificationBar {
     WebDriver driver = null;
 
-    @Test
     public void invokeBrowser() {
         driver = DriverManager.driver;
         driver.manage().deleteAllCookies();
@@ -21,9 +21,12 @@ public class NXNotificationBar {
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
 
-    @Test(dependsOnMethods = "invokeBrowser")
+    @Test
     public void nxBarCountdownTestCase() {
-        NxNotificationBar.testCaseforNotificationBar(driver, Config.URLS.login_url, 1);
+        invokeBrowser();
+        driver.get(Config.URLS.login_url);
+        WordpressLogin.login(driver);
+        NxNotificationBar.testCaseforNotificationBar(driver, Config.URLS.admin_url, 1);
         driver.close();
 //		NxNotificationBar.nxCountdownBarCreate(driver, Config.URLS.login_url, Config.URLS.demosite_url, 2);
 //		driver.close();

@@ -6,8 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
 import utils.Config;
@@ -27,7 +25,7 @@ public class NxDownloadStatNotification {
 
     public static void downloadStatNotification(WebDriver driver) {
         try {
-            driver.get(Config.URLS.demosite_url);
+            driver.get(Config.URLS.root_url);
             Thread.sleep(5000);
             SoftAssert softassert = new SoftAssert();
             driver.findElement(By.xpath(preview_downstat_notification_LOCATOR.plugin_link_xpth)).click();

@@ -12,7 +12,7 @@ public class nxSalesNotificationUtils {
         public static final String display_for_text = "50";
         public static final String display_from_text = "10";
 
-        public static final String purchased = "Mr. S just purchased";
+        public static final String purchased = "MR. S just purchased";
         public static final String notificationX_link_page_title = "NotificationX - Best Social Proof & FOMO Marketing Solution";
     }
 
@@ -82,11 +82,10 @@ public class nxSalesNotificationUtils {
         public static final String product_xpath = "/html/body/div[1]/div[2]/div[3]/div[1]/div[5]/form[1]/table/tbody/tr[1]/td[2]/strong";
         public static final String product_link = "//*[@id=\"sample-permalink\"]/a";
         public static final String view_product_xpth = "/html/body/div[1]/div[2]/div[3]/div[1]/div[5]/form[1]/table/tbody/tr[1]/td[2]/div[3]/span[5]/a";
+        public static final String product_name_page = "/html/body/div[2]/div/div/div/main/div[2]/div[2]/h1";
+        public static final String addtocart_xpath = "/html/body/div[2]/div/div/div/main/div[2]/div[2]/form/button";
 
-        public static final String product_name_page = "/html/body/div[2]/div/div/div/main/div/div[2]/div[2]/h1";
-        public static final String addtocart_xpath = "/html/body/div[2]/div/div/div/main/div/div[2]/div[2]/form/button";
-
-        public static final String checkout_link = "http://nx.com/checkout/";
+        public static final String checkout_link = "checkout/";
         public static final String choose_cod_id = "payment_method_cod";
         public static final String place_order_id = "place_order";
 

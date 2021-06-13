@@ -15,8 +15,8 @@ public class nxELearningNotificationUtils {
         public static final String display_for_text = "60";
         public static final String display_from_text = "10";
 
-        public static final String course_name_text = "NotifciationX Automation for Tutor LMS";
-        public static final String course_page_title = "NotifciationX Automation for Tutor LMS – NX";
+        public static final String course_name_text = "How to automate NotificationX";
+        public static final String course_page_title = "How to automate NotificationX – NX-AUT";
 
     }
 
@@ -61,24 +61,20 @@ public class nxELearningNotificationUtils {
         public static final String sound_drpdwn_xpth = "//*[@id=\"nx-meta-conversions_sound\"]/td/div/span[1]/span[1]/span/span[2]";
     }
 
-    public static class learnign_page_LOCATOR{
-        public static final String page_url = "http://nx.com/elementor-24995/";
-        public static final String input_fname_id = "wpforms-25034-field_0";
-        public static final String input_lname_id = "wpforms-25034-field_0-last";
-        public static final String input_email_id = "wpforms-25034-field_1";
-        public static final String input_message_id = "wpforms-25034-field_2";
-        public static final String submit_button_id = "wpforms-submit-25034";
+    public static class course_page{
+        public static final String couse_url = "courses/how-to-automate-notificationx/";
+        public static final String enroll_btn_xpth = "//*[@id=\"page\"]/div[1]/div/div/div[2]/div/div[1]/div[4]/form/div/button";
     }
 
     public static class preview_learning_notification_LOCATOR{
 
-        public static final String img_xpth = "/html/body/div[2]/div/div[1]/img";
-        public static final String name_xpth = "/html/body/div[2]/div/div[2]/div[1]";
-        public static final String coursename_xpth = "/html/body/div[2]/div/div[2]/div[2]/span";
-        public static final String time_xpth = "/html/body/div[2]/div/div[2]/div[3]/div/span/small";
-        public static final String notificationX_link_xpth = "/html/body/div[2]/div/div[2]/div[3]/small";
-        public static final String close_btn_xpth = "/html/body/div[2]/div/span";
-        public static final String course_link_xpth = "/html/body/div[2]/a";
+        public static final String img_xpth = "/html/body/div[3]/div/div[1]/img";
+        public static final String name_xpth = "/html/body/div[3]/div/div[2]/div[1]";
+        public static final String coursename_xpth = "/html/body/div[3]/div/div[2]/div[2]/span";
+        public static final String time_xpth = "/html/body/div[3]/div/div[2]/div[3]/div/span/small";
+        public static final String notificationX_link_xpth = "/html/body/div[3]/div/div[2]/div[3]/small";
+        public static final String close_btn_xpth = "/html/body/div[3]/div/span";
+        public static final String course_link_xpth = "/html/body/div[3]/a";
 
     }
 }

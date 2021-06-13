@@ -13,7 +13,6 @@ import utils.WordpressLogin;
 public class NXELearning {
     WebDriver driver = null;
 
-    @Test
     public void invokeBrowser() {
         driver = DriverManager.driver;
         driver.manage().deleteAllCookies();
@@ -22,11 +21,12 @@ public class NXELearning {
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
     }
 
-    @Test(dependsOnMethods = "invokeBrowser")
+    @Test
     public void nxCommentsTestCase() {
-//		driver.get(Config.URLS.login_url);
-//		WordpressLogin.login(driver);
-        NxELearningNotification.testCaseforELearningNotification(driver, Config.URLS.login_url);
+        invokeBrowser();
+		driver.get(Config.URLS.login_url);
+		WordpressLogin.login(driver);
+        NxELearningNotification.testCaseforELearningNotification(driver, Config.URLS.admin_url);
         driver.close();
     }
 }

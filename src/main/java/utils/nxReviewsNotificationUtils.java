@@ -77,8 +77,7 @@ public class nxReviewsNotificationUtils {
         public static final String product_xpath = "/html/body/div[1]/div[2]/div[3]/div[1]/div[5]/form[1]/table/tbody/tr[1]/td[2]/strong/a";
         public static final String product_name_id = "title";
         public static final String product_link_id = "sample-permalink";
-        public static final String product_page_title_xpath = "/html/body/div[2]/div/div/div/main/div/div[2]/div[2]/h1";
+        public static final String product_page_title_xpath = "/html/body/div[2]/div/div/div/main/div[2]/div[2]/h1";
         public static final String view_product = "/html/body/div[1]/div[2]/div[3]/div[1]/div[5]/form[1]/table/tbody/tr[1]/td[2]/div[3]/span[5]/a";
-
     }
 }
