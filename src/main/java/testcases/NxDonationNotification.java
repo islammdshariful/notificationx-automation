@@ -21,23 +21,19 @@ import utils.nxDownloadStatNotificationUtils.edit_downstat_notification_LOCATOR;
 public class NxDonationNotification {
     public static void testCaseforDonationNotification(WebDriver driver, String url) {
         createDonationNotification(driver, url);
-//		doDonation(driver);
+		doDonation(driver);
         donationNotification(driver);
         Config.delete_notification(driver, 1);
     }
 
     public static void doDonation(WebDriver driver) {
-        driver.get(nxDonationNotificationUtils.donate_locator.donation_form_url);
-//		Actions cursor = new Actions(driver);
-//		WebElement btn = driver.findElement(By.xpath(nxDonationNotificationUtils.donate_locator.donate_next_page_xpth));
-//		cursor.moveToElement(btn).click().build().perform();
-//		driver.findElement(By.xpath(nxDonationNotificationUtils.donate_locator.donate_next_page_xpth)).click();
-//		driver.findElement(By.className("give-btn advance-btn")).click();
-        driver.findElement(By.id(nxDonationNotificationUtils.donate_locator.donate_ammount_id)).click();
-        driver.findElement(By.id(nxDonationNotificationUtils.donate_locator.donate_ammount_id)).clear();
-        driver.findElement(By.id(nxDonationNotificationUtils.donate_locator.donate_ammount_id)).sendKeys("123");
-        driver.findElement(By.xpath(nxDonationNotificationUtils.donate_locator.continute_button_xpth)).click();
-        driver.findElement(By.id(nxDonationNotificationUtils.donate_locator.final_donate_now_button_id)).click();
+        driver.get(Config.URLS.root_url + nxDonationNotificationUtils.donate_locator.donation_form_url);
+        driver.switchTo().frame("give-embed-form");
+        driver.findElement(By.xpath(nxDonationNotificationUtils.donate_locator.donate_btn_xpth)).click();
+        driver.findElement(By.xpath(nxDonationNotificationUtils.donate_locator.amount_xpth)).click();
+        driver.findElement(By.xpath(nxDonationNotificationUtils.donate_locator.continue_btn_xpth)).click();
+        driver.findElement(By.id(nxDonationNotificationUtils.donate_locator.donate_now_btn_id)).click();
+        driver.switchTo().parentFrame();
     }
 
     public static void donationNotification(WebDriver driver) {
@@ -62,9 +58,9 @@ public class NxDonationNotification {
 //					driver.findElement(By.xpath(preview_donation_notification_LOCATOR.name_xpth)).getText(),
 //					nxDonationNotificationUtils.TEXT.name_text, "NAME TEXT IS FAILED");
 
-            softassert.assertEquals(
-                    driver.findElement(By.xpath(preview_donation_notification_LOCATOR.donate_xpth)).getText(),
-                    nxDonationNotificationUtils.TEXT.donation_name_text, "DONATE NOTE TEXT IS FAILED");
+//            softassert.assertEquals(
+//                    driver.findElement(By.xpath(preview_donation_notification_LOCATOR.donate_xpth)).getText(),
+//                    nxDonationNotificationUtils.TEXT.donation_name_text, "DONATE NOTE TEXT IS FAILED");
             Thread.sleep(1000);
             driver.findElement(By.xpath(preview_donation_notification_LOCATOR.donate_page_link_xpth)).click();
 
@@ -111,7 +107,7 @@ public class NxDonationNotification {
 
         try {
             // LOGIN
-            WordpressLogin.login(driver);
+//            WordpressLogin.login(driver);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,827)", "");

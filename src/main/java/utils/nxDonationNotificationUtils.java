@@ -16,15 +16,18 @@ public class nxDonationNotificationUtils {
         public static final String noti_size_text = "450";
 
         public static final String 	position_text = "Bottom Right";
-        public static final String donation_page_title = "NotificationX – NX";
+        public static final String donation_page_title = "A-Donation-Aut-NX – NX-AUT";
     }
 
     public static class donate_locator{
-        public static final String donation_form_url = "http://nx.com/donations/3843/";
-        public static final String donate_next_page_xpth = "/html/body/div[1]/div[2]/div[1]/button[2]";
-        public static final String donate_ammount_id = "give-amount";
-        public static final String continute_button_xpth = "/html/body/div[1]/form/div[2]/button";
-        public static final String final_donate_now_button_id = "give-purchase-button";
+        public static final String donation_form_url = "a-donation-aut-nx/";
+        public static final String donate_btn_xpth = "/html/body/div[1]/form/div[1]/button";
+        public static final String amount_xpth = "/html/body/div[1]/form/div[2]/ul/li[5]/button";
+        public static final String continue_btn_xpth = "/html/body/div[1]/form/div[2]/button";
+        public static final String fname_id = "give-first";
+        public static final String lname_id = "give-last";
+        public static final String email_id = "give-email";
+        public static final String donate_now_btn_id = "give-purchase-button";
     }
 
     public static class edit_donation_notification_LOCATOR {

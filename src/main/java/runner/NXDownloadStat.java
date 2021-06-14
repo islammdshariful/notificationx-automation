@@ -14,7 +14,6 @@ import utils.WordpressLogin;
 public class NXDownloadStat {
     WebDriver driver = null;
 
-    @Test
     public void invokeBrowser() {
         driver = DriverManager.driver;
         driver.manage().deleteAllCookies();
@@ -23,11 +22,12 @@ public class NXDownloadStat {
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
 
-    @Test(dependsOnMethods = "invokeBrowser")
+    @Test
     public void nxCommentsTestCase() {
-//        driver.get(Config.URLS.login_url);
-//        WordpressLogin.login(driver);
-        NxDownloadStatNotification.testCaseforDownloadStatNotification(driver, Config.URLS.login_url);
+        invokeBrowser();
+        driver.get(Config.URLS.login_url);
+        WordpressLogin.login(driver);
+        NxDownloadStatNotification.testCaseforDownloadStatNotification(driver, Config.URLS.admin_url);
         driver.close();
     }
 }

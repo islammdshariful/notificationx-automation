@@ -16,7 +16,7 @@ import utils.Config.EDITUTILS;
 
 public class NxContactFormNotification {
     public static void testCaseforContactFormNotification(WebDriver driver, String url) {
-        createContactFormNotification(driver, url);
+//        createContactFormNotification(driver, url);
         doSubmitForm(driver);
         contactFormNotification(driver);
         Config.delete_notification(driver, 0);
@@ -28,11 +28,23 @@ public class NxContactFormNotification {
                 .sendKeys(nxContactFromNotificationUtils.TEXT.input_fname_text);
         driver.findElement(By.name(nxContactFromNotificationUtils.contact_LOCATOR.input_email_name))
                 .sendKeys(nxContactFromNotificationUtils.TEXT.input_email_text);
+        driver.findElement(By.name(nxContactFromNotificationUtils.contact_LOCATOR.input_subject_name)).sendKeys(nxContactFromNotificationUtils.TEXT.input_sub_txt);
         driver.findElement(By.name(nxContactFromNotificationUtils.contact_LOCATOR.input_message_name))
                 .sendKeys(nxContactFromNotificationUtils.TEXT.input_message_text);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,308)", "");
         driver.findElement(By.xpath(nxContactFromNotificationUtils.contact_LOCATOR.submit_button_xpth)).click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        String success = driver.findElement(By.xpath("/html/body/div[2]/div/div/div/main/article/div/div/form/div[2]")).getText();
+        if(success.equals("Thank you for your message. It has been sent.")){
+            System.out.println("Submitted successfully.");
+        }else {
+            System.out.println("Submit failed.");
+        }
     }
 
 
@@ -78,7 +90,7 @@ public class NxContactFormNotification {
 
         try {
             // LOGIN
-            WordpressLogin.login(driver);
+//            WordpressLogin.login(driver);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,827)", "");
@@ -94,7 +106,7 @@ public class NxContactFormNotification {
             // SELETECT CONTACT FORM NOTIFICATION
             driver.findElement(By.xpath(Config.EDITUTILS.select_contactform_notification_xpath)).click();
             driver.findElement(
-                    By.xpath(nxContactFromNotificationUtils.edit_contactform_notification_LOCATOR.choose_wpform_xpth))
+                    By.xpath(edit_contactform_notification_LOCATOR.choose_cf7_xpth))
                     .click();
             driver.findElement(By.className(Config.EDITUTILS.next_button_class)).click();
             // -----------------------------------Design----------------------------------
@@ -118,11 +130,11 @@ public class NxContactFormNotification {
 
             Thread.sleep(1000);
             driver.findElement(By.xpath(edit_contactform_notification_LOCATOR.noti_template_name_xpth)).click();
-            driver.findElement(By.xpath(edit_contactform_notification_LOCATOR.input_tem_name_xpth))
-                    .sendKeys(nxContactFromNotificationUtils.TEXT.noti_tem_name_text);
-            Thread.sleep(1000);
-            driver.findElement(By.xpath(edit_contactform_notification_LOCATOR.input_tem_name_xpth))
-                    .sendKeys(Keys.ENTER);
+//            driver.findElement(By.xpath(edit_contactform_notification_LOCATOR.input_tem_name_xpth))
+//                    .sendKeys(nxContactFromNotificationUtils.TEXT.noti_tem_name_text);
+//            Thread.sleep(1000);
+//            driver.findElement(By.xpath(edit_contactform_notification_LOCATOR.input_tem_name_xpth))
+//                    .sendKeys(Keys.ENTER);
 
             driver.findElement(By.id(edit_contactform_notification_LOCATOR.input_tem_text_id)).click();
             driver.findElement(By.id(edit_contactform_notification_LOCATOR.input_tem_text_id)).clear();

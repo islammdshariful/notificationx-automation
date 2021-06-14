@@ -4,7 +4,7 @@ public class nxContactFromNotificationUtils {
     public static class TEXT {
         public static final String add_title = "Contact Form Notification";
 
-        public static final String slelect_form_text = "NotificationX Automation";
+        public static final String slelect_form_text = "Contact form 1";
         public static final String noti_tem_name_text = "Name";
 
         public static final String tem_text = "Recently Contacted Via";
@@ -16,9 +16,10 @@ public class nxContactFromNotificationUtils {
         public static final String display_from_text = "10";
 
         public static final String contact_form_url = "a-contact-cf7-nx/";
-        public static final String input_fname_text = "Webdriver";
+        public static final String input_fname_text = "Sabbir";
         public static final String input_lname_text = "Automation";
         public static final String input_email_text = "Sabbir@gmail.com";
+        public static final String input_sub_txt = "Automation is running";
         public static final String input_message_text = "This Automation is for testing notificationX in Contact From.";
 
 
@@ -38,14 +39,14 @@ public class nxContactFromNotificationUtils {
         // ----------------------------design-----------------------
         public static final String choose_theme_xpth = "//*[@id=\"nx-meta-form_theme\"]/td/div/div/div/div[2]/label/img";
 
-        // ----------------------------content-----------------------
-        public static final String select_form_dropdown_xpth = "//*[@id=\"nx-meta-wpf_form\"]/td/div/span/span[1]/span/span[2]";
+        // ----------------------------content----------------------- //*[@id="nx_meta_form_template_new"]/div/span[1]/span[1]/span/span[2]
+        public static final String select_form_dropdown_xpth = "//*[@id=\"nx-meta-cf7_form\"]/td/div/span/span[1]/span/span[2]";
         public static final String input_select_form_xpth = "/html/body/span/span/span[1]/input";
-        public static final String noti_template_name_xpth = "//*[@id=\"nx_meta_wpf_template_new\"]/div/span[1]/span[1]/span/span[2]";
+        public static final String noti_template_name_xpth = "//*[@id=\"nx_meta_form_template_new\"]/div/span[1]/span[1]/span/span[2]";
         public static final String input_tem_name_xpth = "/html/body/span/span/span[1]/input";
-        public static final String input_tem_text_id = "nx_meta_wpf_template_new_second_param";
-        public static final String title_drpdwn_xpth = "//*[@id=\"nx_meta_wpf_template_new\"]/div/span[2]/span[1]/span/span[2]";
-        public static final String time_drpdwn_xpth = "//*[@id=\"nx_meta_wpf_template_new\"]/div/span[3]/span[1]/span/span[2]";
+        public static final String input_tem_text_id = "nx_meta_form_template_new_second_param";
+        public static final String title_drpdwn_xpth = "//*[@id=\"nx_meta_form_template_new\"]/div/span[2]/span[1]/span/span[2]";
+        public static final String time_drpdwn_xpth = "//*[@id=\"nx_meta_form_template_new\"]/div/span[3]/span[1]/span/span[2]";
         //
 //		//link options
 //		public static final String link_type_drpdwn_xpth = "//*[@id=\"nx-meta-donation_url\"]/td/div/span/span[1]/span/span[2]";
@@ -82,7 +83,7 @@ public class nxContactFromNotificationUtils {
         public static final String input_email_name = "your-email";
         public static final String input_subject_name = "your-subject";
         public static final String input_message_name = "your-message";
-        public static final String submit_button_xpth = "//*[@id=\"wpcf7-f5-p80-o1\"]/form/p[5]/input";
+        public static final String submit_button_xpth = "/html/body/div[2]/div/div/div/main/article/div/div/form/p[5]/input";
     }
 
     public static class preview_contactform_notification_LOCATOR {

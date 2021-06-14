@@ -19,7 +19,7 @@ public class nxCommentsNotificationUtils {
         public static final SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         public static final String comment_text = "A good article " + sdf.format(date);
 
-        public static final String post_name_text = "NotificationX – Comment";
+        public static final String post_name_text = "LOREM IPSUM IS SIMPLY A DUMMY TEXT.";
 
         public static final String notificaion_size = "450";
 
@@ -76,15 +76,15 @@ public class nxCommentsNotificationUtils {
     }
 
     public static class preview_comment_notification_LOCATOR {
-        // PREVIEW MODE
+        // PREVIEW MODE /html/body/div[8]/div/div[2]/div[1]
         public static final String comment_image_xpath = "/html/body/div[4]/div/div[1]/img";
         public static final String comment_name_xpath = "/html/body/div[4]/div/div[2]/div[1]";
-        public static final String comment_content_xpath = "/html/body/div[4]/div/div[2]/div[2]/span";
+        public static final String comment_content_xpath = "/html/body/div[4]/div/div[2]/div[2]";
         public static final String notification_close_button_xpath = "/html/body/div[4]/div/span";
         public static final String comment_link_xpath = "/html/body/div[4]/a";
         public static final String time_xpth = "/html/body/div[4]/div/div[2]/div[3]/div/span/small";
         public static final String notificationX_link = "/html/body/div[4]/div/div[2]/div[3]/small";
 
-        public static final String post_page_title_xpath = "/html/body/div[2]/div/div/div/main/article/div/header/div/h1";
+        public static final String post_page_title_xpath = "/html/body/div[2]/div/div/div/main/article/header[1]/div/div/h1";
     }
 }

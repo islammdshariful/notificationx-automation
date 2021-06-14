@@ -94,7 +94,7 @@ public class Config {
     }
 
     public static class URLS {
-        public static final String root_url = "http://nx.com/";
+        public static final String root_url = "http://nx-aut.com/";
         public static final String login_url = root_url + "wp-login.php";
         public static final String admin_url = root_url + "wp-admin/";
     }

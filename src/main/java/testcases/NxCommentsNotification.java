@@ -16,7 +16,7 @@ import utils.nxSalesNotificationUtils;
 
 public class NxCommentsNotification {
     public static void testCaseforCommnetNotification(WebDriver driver, String url) {
-        createCommentsNotification(driver, url);
+//        createCommentsNotification(driver, url);
         doComments(driver, Config.URLS.root_url + nxCommentsNotificationUtils.TEXT.post_link);
         commentNotification(driver);
         Config.delete_notification(driver, 1); //if re-generate option is available put 1 else 0
@@ -47,21 +47,6 @@ public class NxCommentsNotification {
                 System.out.println("Notification avatar is NOT Visible");
             }
 
-            softassert.assertEquals(driver
-                    .findElement(By
-                            .xpath(nxCommentsNotificationUtils.preview_comment_notification_LOCATOR.comment_name_xpath))
-                    .getText(), nxCommentsNotificationUtils.TEXT.comment_name_text, "COMMENTER NAME TEXT IS FAILED");
-
-            softassert.assertEquals(driver
-                    .findElement(By.xpath(
-                            nxCommentsNotificationUtils.preview_comment_notification_LOCATOR.comment_content_xpath))
-                    .getText(), nxCommentsNotificationUtils.TEXT.comment_text, "COMMENT CONTENT TEXT IS FAILED");
-
-//			Thread.sleep(2000);
-//			WebElement link = driver.findElement(By.xpath(nxCommentsNotificationUtils.LOCATOR.comment_content_xpath));
-//			Actions cursor = new Actions(driver);
-//			cursor.moveToElement(link).click().build().perform();
-
             Thread.sleep(1000);
             driver.findElement(
                     By.xpath(nxCommentsNotificationUtils.preview_comment_notification_LOCATOR.comment_link_xpath))
@@ -90,7 +75,21 @@ public class NxCommentsNotification {
 //			driver.close();
 //			driver.switchTo().window(tabs2.get(0));
 
-            Thread.sleep(2000);
+            Thread.sleep(1000);
+            String name = driver
+                    .findElement(By
+                            .xpath(nxCommentsNotificationUtils.preview_comment_notification_LOCATOR.comment_name_xpath))
+                    .getText();
+            softassert.assertEquals(name , nxCommentsNotificationUtils.TEXT.comment_name_text, "COMMENTER NAME TEXT IS FAILED");
+
+            String content = driver
+                    .findElement(By.xpath(
+                            nxCommentsNotificationUtils.preview_comment_notification_LOCATOR.comment_content_xpath))
+                    .getText();
+            softassert.assertEquals(content, nxCommentsNotificationUtils.TEXT.comment_text, "COMMENT CONTENT TEXT IS FAILED");
+
+            Thread.sleep(1000);
+
             driver.findElement(By.xpath(
                     nxCommentsNotificationUtils.preview_comment_notification_LOCATOR.notification_close_button_xpath))
                     .click();
@@ -106,7 +105,7 @@ public class NxCommentsNotification {
             driver.get(edit_url);
 
             // LOGIN
-            WordpressLogin.login(driver);
+//            WordpressLogin.login(driver);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,827)", "");

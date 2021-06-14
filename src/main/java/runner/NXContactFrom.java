@@ -13,7 +13,6 @@ import utils.WordpressLogin;
 public class NXContactFrom {
     WebDriver driver = null;
 
-    @Test
     public void invokeBrowser() {
         driver = DriverManager.driver;
         driver.manage().deleteAllCookies();
@@ -22,11 +21,12 @@ public class NXContactFrom {
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
 
-    @Test(dependsOnMethods = "invokeBrowser")
+    @Test
     public void nxContactFormTestCase() {
-//        driver.get(Config.URLS.login_url);
-//		WordpressLogin.login(driver);
-        NxContactFormNotification.testCaseforContactFormNotification(driver, Config.URLS.login_url);
+        invokeBrowser();
+        driver.get(Config.URLS.login_url);
+		WordpressLogin.login(driver);
+        NxContactFormNotification.testCaseforContactFormNotification(driver, Config.URLS.admin_url);
         driver.close();
     }
 }
